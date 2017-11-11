@@ -1,0 +1,527 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html><head activetabindex="1" activetabid="u11l1s8" activetabpriortostylesheetprocessing=""><title>MyIIT</title><link type="text/css" rel="stylesheet" href="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/portal.css"><link type="text/css" rel="stylesheet" href="/misc/style.css"><link type="text/css" rel="stylesheet" href="/custom/iit-iv/custom.css"><link type="text/css" rel="stylesheet" href="/cp/content/style.css"><link type="text/css" rel="stylesheet" href="/misc/cpAlert.css"><script src="/js/clientsniffer.js" language="JavaScript"></script><script src="/js/util.js" language="JavaScript"></script><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><script src="/js/checkInfoUpdateRequired/main.js" language="JavaScript"></script><script language="JavaScript">
+          setTimeout('initSession()', 1000);
+        </script><script language="JavaScript">
+        aan = new Image(39, 26);
+        aan.src = "/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/email_roll.gif";
+        bbn = new Image(39, 26);
+        bbn.src = "/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/calendar_roll.gif";
+        ccn = new Image(39, 26);
+        ccn.src = "/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/groups_roll.gif";
+        ddn = new Image(39, 26);
+        ddn.src = "/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/admin_roll.gif";
+        een = new Image(39, 26);
+        een.src = "/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/logout_roll.gif";
+        ffn = new Image(39, 26);
+        ffn.src = "/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/help_roll.gif";
+        aaf = new Image(39, 26);
+        aaf.src = "/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/email_dft.gif";
+        bbf = new Image(39, 26);
+        bbf.src = "/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/calendar_dft.gif";
+        ccf = new Image(39, 26);
+        ccf.src = "/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/groups_dft.gif";
+        ddf = new Image(39, 26);
+        ddf.src = "/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/admin_dft.gif";
+        eef = new Image(39, 26);
+        eef.src = "/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/logout_dft.gif";
+        fff = new Image(39, 26);
+        fff.src = "/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/help_dft.gif";
+        function img_act(imgName)
+        {
+            document[imgName].src = eval(imgName + "n.src");
+        }
+        function img_inact(imgName)
+        {
+            document[imgName].src = eval(imgName + "f.src");
+        }
+        function center(width, height)
+        {
+            width = Math.min(screen.availWidth, width);
+            height = Math.min(screen.availHeight, height);
+            topMargin = parseInt((screen.availHeight - height)/2);
+            leftMargin = parseInt((screen.availWidth - width)/2);
+            return 'width='+width+',height='+height+',top='+topMargin+',left='+leftMargin;
+        }
+        var helpTag = "gen.main";
+        var isCourses = false;
+        var emailWindow;
+        if (typeof navigator.muaWindowIndex === "undefined")
+            navigator.muaWindowIndex = -1;
+        
+        var jmain;
+        if( navigator.calWin != null )
+        {
+                jmain = navigator.calWin[0];
+        }
+        
+        if (self.name == "cpLogin") { self.name = "";}
+        var mainWindow = true;  
+  function unloadPage()
+  {
+      if(navigator.cpChildWindowList != null)
+      {
+          for( var i=0;
+               i < navigator.cpChildWindowList.length;
+               i++
+              )
+          {
+              var win = navigator.cpChildWindowList[i];
+              if ( navigator.muaWindowIndex == i )
+              {
+                logoutMuaWin();
+              }
+              if(!win.closed)
+              {
+                  win.close();
+              }
+          }
+          navigator.cpChildWindowList = null;
+      }
+  }
+  function logoutMuaWin()
+  {
+    var xmlHttpRequest = getXmlHttpRequest();
+    xmlHttpRequest.open("GET", /*URL*/ "http://my.iit.edu/cp/wu/mua/logout", true);
+    xmlHttpRequest.send(null);
+    navigator.muaWindowIndex = -1;
+  }
+  function OpenHelp()
+  {
+      if (self.name == "nav")
+      {
+          parent.top.OpenHelp();
+      }
+      else
+      {
+          var unDefined;
+          var prefix = /*URL*/ "http://my.iit.edu/cp/contexthelp/";
+          var url = helpTag;
+          if(navigator.cpChildWindowList == null)
+          {
+              navigator.cpChildWindowList = new Array();
+          }
+          if ( isCourses && parent.top.frames[1].helpTag != null)
+          { url = prefix + parent.top.frames[1].helpTag; }
+          else
+          { url = prefix + helpTag; }
+          stats='resizable=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,';
+          stats += 'scrollbars=yes,width=650,height=475';
+          helpWindow = window.open (url,"helpWindow",stats);
+          setTimeout ("helpWindow.focus ()", 500);
+          navigator.cpChildWindowList[navigator.cpChildWindowList.length] = helpWindow;
+        }
+  }
+  function OpenWin(w, wURL, wStats)
+  {
+      if (self.name == "nav")
+      {
+          parent.top.OpenWin(w, wURL, wStats);
+      }
+      else
+      {
+              var unDefined;
+          if(navigator.cpChildWindowList == null)
+          {
+              navigator.cpChildWindowList = new Array();
+          }
+          if (w == "email")
+          {
+                stats='dependent=yes,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,';
+                stats += center(775, 550);
+              if (emailWindow)
+              {
+                  if (emailWindow.closed)
+                  {
+                        emailWindow = window.open ("/jsp/email/emailCenter.jsp?force=true","emailWindow",stats);
+                        setTimeout ("emailWindow.focus ()", 500);
+                        navigator.cpChildWindowList[navigator.cpChildWindowList.length] = emailWindow;
+                  }
+                  else
+                  {
+                      emailWindow.focus();
+                  }
+              }
+              else
+              {
+                    emailWindow = window.open ("/jsp/email/emailCenter.jsp?force=true","emailWindow",stats);
+                    setTimeout ("emailWindow.focus ()", 500);
+                    navigator.cpChildWindowList[navigator.cpChildWindowList.length] = emailWindow;
+              }
+          }
+          else if (w == "mua")
+          {
+              stats='dependent=yes,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,';
+              stats += center(775, 550);
+              if (emailWindow)
+              {
+                  if (emailWindow.closed)
+                  {
+                      emailWindow = window.open ("http://my.iit.edu/cp/wu/mua","muaWindow",stats);
+                      setTimeout ("emailWindow.focus ()", 500);
+                      navigator.muaWindowIndex = navigator.cpChildWindowList.length;
+                      navigator.cpChildWindowList[navigator.cpChildWindowList.length] = emailWindow;
+                  }
+                  else
+                  {
+                      emailWindow.focus();
+                  }
+              }
+              else
+              {
+                  emailWindow = window.open ("http://my.iit.edu/cp/wu/mua","muaWindow",stats);
+                  setTimeout ("emailWindow.focus ()", 500);
+                  navigator.muaWindowIndex = navigator.cpChildWindowList.length;
+                  navigator.cpChildWindowList[navigator.cpChildWindowList.length] = emailWindow;
+              }
+              }
+          else if (w == "groups")
+          {
+              stats='dependent=yes,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,';
+              stats += center(720,550);
+              groupsWindow = window.open (wURL,"groupsWindow",stats);
+              setTimeout ("groupsWindow.focus ()", 500);
+              navigator.cpChildWindowList[navigator.cpChildWindowList.length] = groupsWindow;
+          }
+          else if (w == "calendar")
+          {
+              stats='dependent=yes,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,';
+              stats += center(790,550);
+                    jmain = window.open ("http://my.iit.edu/cp/wu/calendar_redirect","calendarWindow",stats);
+              calendarWindow = jmain;
+              setTimeout ("calendarWindow.focus ()", 500);
+              navigator.cpChildWindowList[navigator.cpChildWindowList.length] = calendarWindow;
+          }
+          else if (w == "calendarinvite")
+          {
+              stats='dependent=yes,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,';
+              stats += center(790,550);
+              calendarWindow = window.open ("http://my.iit.edu/cp/wu/calendar_redirect","calendarWindow",stats);
+              setTimeout ("calendarWindow.focus ()", 500);
+              navigator.cpChildWindowList[navigator.cpChildWindowList.length] = calendarWindow;
+              stats='resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,';
+              stats += center(590,550);
+              calendarWindow2 = window.open ("/cp/wu/calendar_invite","calendarWindow2",stats);
+              setTimeout ("calendarWindow2.focus ()", 500);
+              navigator.cpChildWindowList[navigator.cpChildWindowList.length] = calendarWindow2;
+          }
+          else if (w == "admin")
+          {
+              stats='dependent=yes,resizable=yes,scrollbars=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,';
+              stats += center(790, 550);
+              adminWindow = window.open ("https://my.iit.edu/jsp/admin/Admin.jsp","adminWindow",stats);
+              setTimeout ("adminWindow.focus ()", 500);
+              navigator.cpChildWindowList[navigator.cpChildWindowList.length] = adminWindow;
+          }
+          else if (w == "webct")
+          {
+              webctWindow = window.open( wURL , 'webctWindow', wStats);
+              setTimeout ('webctWindow.focus ()', 500);
+              navigator.cpChildWindowList[navigator.cpChildWindowList.length] = webctWindow;
+          }
+      }
+  }
+  
+checkInfoUpdateRequired();
+          function openBrWindow(theURL,winName,features)
+          {
+              window.open(theURL,winName,features);
+          }
+          
+          </script></head><body class="main"><SCRIPT language="JavaScript">
+      
+      function checkMuaWindow()
+      {
+          if (typeof navigator.muaWindowIndex === "number")
+          if (navigator.muaWindowIndex >= 0)
+          {
+              var win = navigator.cpChildWindowList[navigator.muaWindowIndex];
+              if ( win.closed )
+              {
+                logoutMuaWin();
+              }
+          }
+      }
+      function alertAdminMessageOk()
+      {
+          hideAlertMessage();
+          doXmlPoll();
+      }
+      function alertTimeoutMessageOk()
+      {
+          hideAlertMessage();
+          resetTimeout();
+	  doXmlPoll();
+      }
+      function resetTimeout()
+      {
+          var xmlHttpRequest = getXmlHttpRequest();
+          xmlHttpRequest.open("GET", /*URL*/ "/cp/alert/rt", true);
+          xmlHttpRequest.send(null);
+	  window.status = "Sent request to /cp/alert/rt";
+      }
+      function alertTimeoutMessageLogout()
+      {
+          hideAlertMessage();
+          unloadPage();
+          window.top.location.href = /*URL*/ "http://my.iit.edu/cp/home/logout?src=alert";
+      }
+      var savedRows;
+      var savedHeight;
+      var messageDialogTimer = 0;
+      function hideAlertMessage()
+      {
+          setElementVisibility( "alertSessionExpireMessageDiv", "hidden" );
+          setElementVisibility( "alertAdminMessageDiv", "hidden" );
+          if (isIE())
+          {       
+             var sessionAlertIframe = "alertSessionExpireMessageDiv"+"iframeDiv";
+             if ( document.getElementById(sessionAlertIframe) != null )
+             {            
+                 setElementVisibility( sessionAlertIframe, "hidden" );
+             }
+             var adminAlertIframe = "alertAdminMessageDiv"+"iframeDiv";
+             if ( document.getElementById(adminAlertIframe) != null )
+             {            
+                 setElementVisibility( adminAlertIframe, "hidden" );
+             }
+          }
+          
+          if ( savedHeight <= document.body.clientHeight )
+          {
+              top.document.body.rows = savedRows;
+          }
+	  if ( messageDialogTimer )
+          {
+              clearTimeout( messageDialogTimer );
+          }
+      }
+      function centerElementStyle( elementName )
+      {
+          var framed = 0;
+          height = document.body.clientHeight;
+          savedHeight = height;
+          savedRows = top.document.body.rows;
+          if ( height < 200 )
+          {
+              framed = 1;
+              top.document.body.rows = "200, 100%";
+          }
+          var element = document.getElementById( elementName );
+          elementLeft= document.body.clientWidth/2 - 200 + document.body.scrollLeft;
+          elementTop = document.body.clientHeight/2 - 112 + document.body.scrollTop;
+          if ( elementTop < 50 )
+          {
+              elementTop = 50;
+          }
+          if (framed == 1)
+          {
+              elementTop = 1;
+          }
+          element.style.left = elementLeft+'px'; 
+          element.style.top = elementTop+'px'; 
+          element.style.zIndex = 10;
+          if (isIE())
+          {
+              var iframeDivShim = elementName+"iframeDiv" ;
+             if ( document.getElementById(iframeDivShim) == null )
+             {       
+                 element.insertAdjacentHTML("afterEnd", '<IFRAME style="position: absolute;z-index:9;" src="javascript:false;" frameBorder="0" scrolling="no" id="'+iframeDivShim+'" />');
+             }
+             var iframeShim = document.getElementById(iframeDivShim);
+             iframeShim.style.top = element.style.top;
+             iframeShim.style.left = element.style.left;
+             iframeShim.style.width = element.offsetWidth;
+             iframeShim.style.height = element.offsetHeight;
+          } 
+          
+      }
+      function showAlertAdminMessage( message )
+      {
+          var messageParent = document.getElementById( "alertAdminMessageParent" );
+          if ( messageParent.childNodes[0] )
+          {
+              messageParent.removeChild( messageParent.childNodes[0] );
+          }
+          var messageText = document.createTextNode( message );
+          messageParent.appendChild( messageText );
+          centerElementStyle( "alertAdminMessageDiv" );
+          setElementVisibility( "alertSessionExpireMessageDiv", "hidden" );
+          setElementVisibility( "alertAdminMessageDiv", "visible" );
+          if (isIE())
+          {
+             setElementVisibility( "alertAdminMessageDiv"+"iframeDiv", "visible" );
+          }
+          
+          self.focus();
+      }
+      function showAlertSessionExpireMessage( timeRemaining )
+      {
+          centerElementStyle( "alertSessionExpireMessageDiv" );
+          setElementVisibility( "alertAdminMessageDiv", "hidden" );
+          setElementVisibility( "alertSessionExpireMessageDiv", "visible" );
+          if (isIE())
+          {
+              setElementVisibility( "alertSessionExpireMessageDiv"+"iframeDiv", "visible" );
+          }
+          
+          self.focus();
+	  messageDialogTimer =
+              setTimeout("alertTimeoutMessageLogout()", timeRemaining);
+      }
+      function setElementVisibility( elementId, visibility )
+      {
+          var element = document.getElementById( elementId );
+          element.style.visibility = visibility;
+      }
+      
+      function isIE()
+      {
+          return (document.all);
+      }
+      
+      
+    </SCRIPT><div id="alertAdminMessageDiv"><table class="alertwarning" width="400" border="0" cellspacing="0" cellpadding="2"><tr><td><table class="alertwhite" width="100%" border="0" cellspacing="0" cellpadding="20"><tr><td align="center"><span class="alerttext12">This is a message from your system administrator:
+                <P id="alertAdminMessageParent"></P></span><img height="20" width="1" src="/cps/images/misc/dot-blank.gif"><br><form onsubmit="return false;" method="post" name="adminMessageButtonForm"><input onclick="alertAdminMessageOk();" value="OK" name="ok" type="submit"></form></td></tr></table></td></tr></table></div><div id="alertSessionExpireMessageDiv"><table class="alertwarning" width="400" border="0" cellspacing="0" cellpadding="2"><tr><td><form onsubmit="return false;" method="post" name="alertSessionExpireButtonForm"><table class="alertwhite" width="100%" border="0" cellspacing="0" cellpadding="20"><tr><td colspan="2" align="center">Your Luminis Platform session will expire shortly,<br>click OK to remain logged in.<img height="20" width="1" src="/cps/images/misc/dot-blank.gif"></td></tr><tr><td align="center"><input onclick="alertTimeoutMessageOk();" value="OK" size="8" name="ok" type="submit"></td><td align="center"><input onclick="alertTimeoutMessageLogout();" value="LOGOUT" size="8" name="logout" type="submit"></td></tr></table></form></td></tr></table></div><a name="TOP"></a><a class="skip" id="skip" href="#tab">Skip Navigation</a><table width="100%" cellspacing="0" cellpadding="0" border="0"><tr><td><table width="100%" cellspacing="0" cellpadding="0" border="0"><tr><td class="bg1">
+
+
+
+
+
+
+
+
+
+  
+    
+    
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" background="/media/iit/images/head_bkg_brw3.gif">  <tr>    <td><img src="/media/iit/images/header_blk_red.gif" alt="My IIT " width="800" height="101" border="0" usemap="#Map" /></td>  </tr></table><map name="Map" id="Map">  <area shape="rect" coords="64,5,445,16" href="http://www.iit.edu/" /></map>
+    
+  
+</td></tr><tr><td class="bg3"><img width="697" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="3" alt=""></td></tr></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tr><td width="100%" colspan="11"><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="3" alt=""></td></tr><tr><td><img width="5" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="1" alt=""></td><td nowrap="" align="right"><span class="uportal-text-small"><A target="_top" onmouseover="window.status=''; return true;" href="tag.feb19849ed9f63be.render.userLayoutRootNode.target.ctf10.uP?uP_fname=com/sct/pipeline/uportal/channels/account&amp;uP_tparam=frm&amp;frm=">My Account</A><BR><a target="_top" onmouseover="window.status=''; return true;" href="tag.feb19849ed9f63be.render.userLayoutRootNode.target.ctf10.uP?uP_fname=portal/userpreferences/dlm&amp;uP_tparam=frm&amp;frm=">Content Layout</a></span></td><td><img width="2" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/app_divider.gif" hspace="10" height="36" alt=""></td><td width="100%" nowrap=""><span id="welcome" class="uportal-channel-text">
+
+
+
+<table border='0'>
+  <tr valign='baseline'>
+    <td><span class="uportal-label">Welcome Andrzej Czopek</span></td>
+  </tr>
+  <tr>
+    <td><span class="uportal-text-small">You are currently logged in.</span></td>
+  </tr>
+</table>
+&nbsp;</span></td><td valign="middle"></td><td></td><TD valign="top" align="CENTER"><A onclick="javascript: pageTracker._trackPageview('/icons/manage_account');" target="_blank" href="/cp/ip/login?sys=sctssb&amp;url=https://ssb.iit.edu/bnrprd/zwgktnet.p_redirect"><IMG hspace="6" border="0" height="41" width="48" name="HawkLink" alt="ManageAccount" src="
+		/media/org/jasig/portal/layout/dlm/skins
+	/iit-iv/controls/icon_manage_account.gif"><BR><SPAN class="uportal-label">Manage My Account</SPAN></A></TD><TD valign="top" align="CENTER"><A onclick="javascript: pageTracker._trackPageview('/icons/vcl');" target="_blank" href="http://my.iit.edu/cp/ip/login?sys=vcl&amp;url=https%3A%2F%2Fvcl.iit.edu%2Fvcl%2Findex.php"><IMG hspace="6" border="0" height="41" width="48" name="vcl" alt="vcl" src="
+		/media/org/jasig/portal/layout/dlm/skins
+	/iit-iv/controls/virtual_com.png"><BR><SPAN class="uportal-label">VCL</SPAN></A></TD><TD valign="top" align="CENTER"><A onclick="javascript: pageTracker._trackPageview('/icons/GoogleStudents');" target="_blank" href="/jsp/misc/iit/gRe.jsp?gdest=STU"><IMG hspace="6" border="0" height="41" width="48" name="HawkApps" alt="GoogleApps" src="
+		/media/org/jasig/portal/layout/dlm/skins
+	/iit-iv/controls/g_apps.gif"><BR><SPAN class="uportal-label">Google Apps for Students</SPAN></A></TD><TD valign="top" align="CENTER"><A onclick="javascript: pageTracker._trackPageview('/icons/blackboard');" target="_blank" href="https://blackboard.iit.edu/webapps/bb-auth-provider-cas-BB585304babb2ec/execute/casLogin?cmd=login&amp;authProviderId=_146_1&amp;redirectUrl=https%3A%2F%2Fblackboard.iit.edu%2Fwebapps%2Fportal%2Fexecute%2FdefaultTab"><IMG hspace="6" border="0" height="41" width="48" name="iitonline" alt="iitonline" src="
+		/media/org/jasig/portal/layout/dlm/skins
+	/iit-iv/controls/icon_bb.gif"><BR><SPAN class="uportal-label">Blackboard</SPAN></A></TD><TD valign="top" align="CENTER"><A onclick="javascript: pageTracker._trackPageview('/icons/hawklink');" target="_blank" href="https://hawklink.iit.edu/account/logon"><IMG hspace="6" border="0" height="41" width="48" name="HawkLink" alt="HawkLink" src="
+		/media/org/jasig/portal/layout/dlm/skins
+	/iit-iv/controls/icon_hawklink.gif"><BR><SPAN class="uportal-label">HawkLink</SPAN></A></TD><TD valign="top" align="CENTER"><A onclick="javascript: pageTracker._trackPageview('/icons/footprints');" target="_blank" href="http://my.iit.edu/cp/ip/login?sys=footprints&amp;url=http%3A//www.iit.edu"><IMG hspace="6" border="0" height="41" width="48" name="footprints_agent" alt="OTS Support Desk" src="
+		/media/org/jasig/portal/layout/dlm/skins
+	/iit-iv/controls/icon_support.gif"><BR><SPAN class="uportal-label">ots support</SPAN></A></TD><TD valign="top" align="CENTER"><A onclick="javascript: pageTracker._trackPageview('/icons/ezproxy_stu');" target="_blank" href="http://library.iit.edu/databases/"><IMG hspace="6" border="0" height="41" width="48" name="library_staff" alt="Library E-Resources" src="
+		/media/org/jasig/portal/layout/dlm/skins
+	/iit-iv/controls/icon_library.gif"><BR><SPAN class="uportal-label">library e-resources</SPAN></A></TD><TD valign="top" align="CENTER"><A onclick="javascript: pageTracker._trackPageview('/icons/cdr');" target="_blank" href="http://web.iit.edu/cdr"><IMG hspace="6" border="0" height="41" width="48" name="cdr" alt="cdr" src="
+		/media/org/jasig/portal/layout/dlm/skins
+	/iit-iv/controls/cdr.gif"><BR><SPAN class="uportal-label">Center for Disability Resources</SPAN></A></TD><td><img width="2" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/app_divider.gif" hspace="7" height="36" alt=""></td><td valign="top" align="center"><a target="_top" onmouseover="img_act('ee'); window.status=''; return true;" onmouseout="img_inact('ee');" onclick="unloadPage();" href="http://my.iit.edu/up/Logout?uP_tparam=frm&amp;frm="><img width="48" title="Exit the Portal, alt+l" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/logout_dft.gif" name="ee" hspace="6" height="41" border="0" alt="Exit the Portal, alt+l"><br><span class="uportal-label">Logout</span></a></td><td valign="top" align="center"><a onmouseover="img_act('ff'); window.status=''; return true;" onmouseout="img_inact('ff');" href="javascript:OpenHelp();"><img width="48" title="Get help information for the portal, alt+q" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/help_dft.gif" name="ff" hspace="6" height="41" border="0" alt="Get help information for the portal, alt+q"><br><span class="uportal-label">Help</span></a></td></tr><tr><td width="100%" colspan="11"><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="3" alt=""></td></tr><tr><td width="100%" colspan="11"><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="10" alt=""></td></tr></table><table width="100%" cellspacing="0" cellpadding="0" border="0"><tr><td><table id="tabs_tda" cellspacing="0" cellpadding="0" border="0"><tr><td nowrap="" class="tabon"><div class="tabon"><a target="_top" onmouseover="window.status=''; return true;" id="tab" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_root=root&amp;uP_sparam=activeTab&amp;activeTab=u11l1s8&amp;uP_tparam=frm&amp;frm="><b>Welcome</b></a></div></td><script type="text/javascript">
+				var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+				document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+			</script><script type="text/javascript">
+				try {
+					var pageTracker = _gat._getTracker("UA-10917923-3");
+					pageTracker._trackPageview();
+				} catch(err) {}
+			</script><td nowrap="" class="taboff"><div class="taboff"><a target="_top" onmouseover="window.status=''; return true;" id="tab" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_root=root&amp;uP_sparam=activeTab&amp;activeTab=u12l1s8&amp;uP_tparam=frm&amp;frm=">Academics</a></div></td><td nowrap="" class="taboff"><div class="taboff"><a target="_top" onmouseover="window.status=''; return true;" id="tab" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_root=root&amp;uP_sparam=activeTab&amp;activeTab=u12l1s18&amp;uP_tparam=frm&amp;frm=">Student Life</a></div></td><td nowrap="" class="taboff"><div class="taboff"><a target="_top" onmouseover="window.status=''; return true;" id="tab" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_root=root&amp;uP_sparam=activeTab&amp;activeTab=u12l1s22&amp;uP_tparam=frm&amp;frm=">Finances</a></div></td><td nowrap="" class="taboff"><div class="taboff"><a target="_top" onmouseover="window.status=''; return true;" id="tab" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_root=root&amp;uP_sparam=activeTab&amp;activeTab=u12l1s799&amp;uP_tparam=frm&amp;frm=">Athletics</a></div></td><td nowrap="" class="taboff"><div class="taboff"><a target="_top" onmouseover="window.status=''; return true;" id="tab" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_root=root&amp;uP_sparam=activeTab&amp;activeTab=u26l1s13&amp;uP_tparam=frm&amp;frm=">Library</a></div></td><td nowrap="" class="taboff"><div class="taboff"><a target="_top" onmouseover="window.status=''; return true;" id="tab" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_root=root&amp;uP_sparam=activeTab&amp;activeTab=u26l1s16&amp;uP_tparam=frm&amp;frm=">Research</a></div></td><td nowrap="" class="taboff"><div class="taboff"><a target="_top" onmouseover="window.status=''; return true;" id="tab" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_root=root&amp;uP_sparam=activeTab&amp;activeTab=u26l1s20&amp;uP_tparam=frm&amp;frm=">My Stuff</a></div></td><td nowrap="" class="taboff"><div class="taboff"><a target="_top" onmouseover="window.status=''; return true;" id="tab" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_root=root&amp;uP_sparam=activeTab&amp;activeTab=u26l1s25&amp;uP_tparam=frm&amp;frm=">Training and Support</a></div></td></tr></table></td><td nowrap="" class="cpdate" align="right"><span id="date_txt" class="uportal-text-small"><script language="JavaScript1.2">
+            var months=new Array(13);
+              months[1]='January';
+              months[2]='February';
+              months[3]='March';
+              months[4]='April';
+              months[5]='May';
+              months[6]='June';
+              months[7]='July';
+              months[8]='August';
+              months[9]='September';
+              months[10]='October';
+              months[11]='November';
+              months[12]='December';
+            var time=new Date();
+            var lmonth=months[time.getMonth() + 1];
+            var date=time.getDate();
+            var year=time.getFullYear();
+            document.write(lmonth + ' ');
+            document.write(date + ', ' + year);
+          </script></span></td></tr><tr><td width="100%" colspan="2" class="bgtabon"><img width="10" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="3" alt=""></td></tr><tr><td colspan="2"><img width="10" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="10" alt=""></td></tr></table><span id="content"><table width="100%" class="uportal-background-content" cellspacing="0" cellpadding="0" border="0"><tr><td width="25%"><img height="3" width="10" title="" alt="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif"></td><td><img height="3" width="1" title="" alt="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif"></td><td width="45%"><img height="3" width="10" title="" alt="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif"></td><td><img height="3" width="1" title="" alt="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif"></td><td width="35%"><img height="3" width="10" title="" alt="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif"></td></tr><tr class="uportal-background-content"><td valign="top" width="25%"><table width="100%" id="channel" cellspacing="0" cellpadding="0" border="0" align="center"><tr><td class="bg1"><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="4" alt=""></td></tr><tr><td><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="1" alt=""></td></tr><tr><td class="bgmlight"><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="1" alt=""></td></tr><tr><td><div class="border"><table width="100%" cellspacing="0" cellpadding="3" border="0" align="center"><tr><td class="iit-bg-gray"><span class="uportal-head14-bold">IIT Events</span></td><td valign="top" nowrap="nowrap" class="iit-bg-gray" align="right"><a onmouseover="window.status=''; return true;" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_root=u11l1n86&amp;padding=true"><img title="Expand IIT Events channel to fill screen" alt="Expand IIT Events channel to fill screen" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/focus.gif" width="16" height="16" border="0"></a><a onmouseover="window.status=''; return true;" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_tcattr=minimized&amp;minimized_channelId=u11l1n86&amp;minimized_u11l1n86_value=true"><img title="Minimize IIT Events channel to present less information" alt="Minimize IIT Events channel to present less information" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/min.gif" width="16" height="16" border="0"></a><img src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/chan_remove_na.gif" width="16" height="16"></td></tr><tr><td width="100%" colspan="2"><?xml version="1.0" encoding="UTF-8"?><iframe width="100%" frameborder="no" height="400" src="https://webmaster.iit.edu/portal/events_google.html">dummyText</iframe></td></tr></table></div></td></tr><tr><td><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="20" alt=""></td></tr></table><table width="100%" id="channel" cellspacing="0" cellpadding="0" border="0" align="center"><tr><td class="bg1"><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="4" alt=""></td></tr><tr><td><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="1" alt=""></td></tr><tr><td class="bgmlight"><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="1" alt=""></td></tr><tr><td><div class="border"><table width="100%" cellspacing="0" cellpadding="3" border="0" align="center"><tr><td class="iit-bg-gray"><span class="uportal-head14-bold">Personal Announcements</span></td><td valign="top" nowrap="nowrap" class="iit-bg-gray" align="right"><a onmouseover="window.status=''; return true;" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_root=u11l1n29&amp;padding=true"><img title="Expand Personal Announcements channel to fill screen" alt="Expand Personal Announcements channel to fill screen" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/focus.gif" width="16" height="16" border="0"></a><a onmouseover="window.status=''; return true;" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_tcattr=minimized&amp;minimized_channelId=u11l1n29&amp;minimized_u11l1n29_value=true"><img title="Minimize Personal Announcements channel to present less information" alt="Minimize Personal Announcements channel to present less information" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/min.gif" width="16" height="16" border="0"></a><img src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/chan_remove_na.gif" width="16" height="16"></td></tr><tr><td width="100%" colspan="2">
+
+
+
+
+
+
+
+
+
+
+
+<SCRIPT LANGUAGE="JavaScript">
+
+
+</SCRIPT>
+
+
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%" id="teaser_abm_tbl">
+
+  <tr>
+    <td>
+    <span class="uportal-channel-text">There are no announcements</span>
+    </td>
+  </tr>
+
+
+
+</table>
+
+
+
+</td></tr></table></div></td></tr><tr><td><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="20" alt=""></td></tr></table><table width="100%" id="channel" cellspacing="0" cellpadding="0" border="0" align="center"><tr><td class="bg1"><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="4" alt=""></td></tr><tr><td><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="1" alt=""></td></tr><tr><td class="bgmlight"><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="1" alt=""></td></tr><tr><td><div class="border"><table width="100%" cellspacing="0" cellpadding="3" border="0" align="center"><tr><td class="iit-bg-gray"><span class="uportal-head14-bold">Welcome New Students</span></td><td valign="top" nowrap="nowrap" class="iit-bg-gray" align="right"><a onmouseover="window.status=''; return true;" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_root=u11l1n125&amp;padding=true"><img title="Expand Welcome New Students channel to fill screen" alt="Expand Welcome New Students channel to fill screen" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/focus.gif" width="16" height="16" border="0"></a><a onmouseover="window.status=''; return true;" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_tcattr=minimized&amp;minimized_channelId=u11l1n125&amp;minimized_u11l1n125_value=true"><img title="Minimize Welcome New Students channel to present less information" alt="Minimize Welcome New Students channel to present less information" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/min.gif" width="16" height="16" border="0"></a><a onmouseover="window.status=''; return true;" onclick="return confirm('Are you sure you want to remove the Welcome New Students channel from your layout?')" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_remove_target=u11l1n125"><img title="Remove Welcome New Students channel from your layout" alt="Remove Welcome New Students channel from your layout" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/remove.gif" width="16" height="16" border="0"></a></td></tr><tr><td width="100%" colspan="2"><?xml version="1.0" encoding="UTF-8"?><iframe width="100%" frameborder="no" height="300" src="https://pws.iit.edu/ch/tghzg9ed/welcome-new-students?my=prod">dummyText</iframe></td></tr></table></div></td></tr><tr><td><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="20" alt=""></td></tr></table><table width="100%" id="channel" cellspacing="0" cellpadding="0" border="0" align="center"><tr><td class="bg1"><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="4" alt=""></td></tr><tr><td><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="1" alt=""></td></tr><tr><td class="bgmlight"><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="1" alt=""></td></tr><tr><td><div class="border"><table width="100%" cellspacing="0" cellpadding="3" border="0" align="center"><tr><td class="iit-bg-gray"><span class="uportal-head14-bold">Phone Book</span></td><td valign="top" nowrap="nowrap" class="iit-bg-gray" align="right"><a onmouseover="window.status=''; return true;" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_root=u11l1n38&amp;padding=true"><img title="Expand Phone Book channel to fill screen" alt="Expand Phone Book channel to fill screen" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/focus.gif" width="16" height="16" border="0"></a><a onmouseover="window.status=''; return true;" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_tcattr=minimized&amp;minimized_channelId=u11l1n38&amp;minimized_u11l1n38_value=true"><img title="Minimize Phone Book channel to present less information" alt="Minimize Phone Book channel to present less information" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/min.gif" width="16" height="16" border="0"></a><a onmouseover="window.status=''; return true;" onclick="return confirm('Are you sure you want to remove the Phone Book channel from your layout?')" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_remove_target=u11l1n38"><img title="Remove Phone Book channel from your layout" alt="Remove Phone Book channel from your layout" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/remove.gif" width="16" height="16" border="0"></a></td></tr><tr><td width="100%" colspan="2"><?xml version="1.0" encoding="UTF-8"?><iframe width="100%" frameborder="no" height="220" src="https://phonebook.iit.edu/index.html">dummyText</iframe></td></tr></table></div></td></tr><tr><td><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="20" alt=""></td></tr></table><table width="100%" id="channel" cellspacing="0" cellpadding="0" border="0" align="center"><tr><td class="bg1"><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="4" alt=""></td></tr><tr><td><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="1" alt=""></td></tr><tr><td class="bgmlight"><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="1" alt=""></td></tr><tr><td><div class="border"><table width="100%" cellspacing="0" cellpadding="3" border="0" align="center"><tr><td class="iit-bg-gray"><span class="uportal-head14-bold">Weather</span></td><td valign="top" nowrap="nowrap" class="iit-bg-gray" align="right"><a onmouseover="window.status=''; return true;" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_root=u11l1n50&amp;padding=true"><img title="Expand Weather channel to fill screen" alt="Expand Weather channel to fill screen" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/focus.gif" width="16" height="16" border="0"></a><a onmouseover="window.status=''; return true;" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_tcattr=minimized&amp;minimized_channelId=u11l1n50&amp;minimized_u11l1n50_value=true"><img title="Minimize Weather channel to present less information" alt="Minimize Weather channel to present less information" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/min.gif" width="16" height="16" border="0"></a><a onmouseover="window.status=''; return true;" onclick="return confirm('Are you sure you want to remove the Weather channel from your layout?')" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_remove_target=u11l1n50"><img title="Remove Weather channel from your layout" alt="Remove Weather channel from your layout" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/remove.gif" width="16" height="16" border="0"></a></td></tr><tr><td width="100%" colspan="2"><div xmlns:cp="http://www.campuspipeline.com" class="tcc_sections">
+<ul class="uportal-text no-bullet">
+<li>
+<span id="p_chan_text" class="uportal-text"><div id="wx_module_5867">
+   <a href="http://www.weather.com/weather/local/60616">Chicago Weather Forecast, IL (60616)</a>
+</div>
+
+<script type="text/javascript">
+
+   /* Locations can be edited manually by updating 'wx_locID' below.  Please also update */
+   /* the location name and link in the above div (wx_module) to reflect any changes made. */
+   var wx_locID = '60616';
+
+   /* If you are editing locations manually and are adding multiple modules to one page, each */
+   /* module must have a unique div id.  Please append a unique # to the div above, as well */
+   /* as the one referenced just below.  If you use the builder to create individual modules  */
+   /* you will not need to edit these parameters. */
+   var wx_targetDiv = 'wx_module_5867';
+
+   /* Please do not change the configuration value [wx_config] manually - your module */
+   /* will no longer function if you do.  If at any time you wish to modify this */
+   /* configuration please use the graphical configuration tool found at */
+   /* https://registration.weather.com/ursa/wow/step2 */
+   var wx_config='SZ=300x250*WX=FHW*LNK=SSNL*UNT=F*BGI=fall*MAP=null|null*DN=iit.edu*TIER=0*PID=1026667084*MD5=79da0711109df7ff131771ec394378f3';
+
+   document.write('<scr'+'ipt src="'+document.location.protocol+'//wow.weather.com/weather/wow/module/'+wx_locID+'?config='+wx_config+'&proto='+document.location.protocol+'&target='+wx_targetDiv+'"></scr'+'ipt>');  
+</script></span>
+</li>
+</ul>
+</div>
+</td></tr></table></div></td></tr><tr><td><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="20" alt=""></td></tr></table></td><td class="vrule" width="1"><img height="1" width="15" title="" alt="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif"></td><td valign="top" width="45%"><table width="100%" id="channel" cellspacing="0" cellpadding="0" border="0" align="center"><tr><td class="bg1"><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="4" alt=""></td></tr><tr><td><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="1" alt=""></td></tr><tr><td class="bgmlight"><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="1" alt=""></td></tr><tr><td><div class="border"><table width="100%" cellspacing="0" cellpadding="3" border="0" align="center"><tr><td class="iit-bg-gray"><span class="uportal-head14-bold">IIT Today</span></td><td valign="top" nowrap="nowrap" class="iit-bg-gray" align="right"><a onmouseover="window.status=''; return true;" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_root=u11l1n82&amp;padding=true"><img title="Expand IIT Today channel to fill screen" alt="Expand IIT Today channel to fill screen" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/focus.gif" width="16" height="16" border="0"></a><a onmouseover="window.status=''; return true;" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_tcattr=minimized&amp;minimized_channelId=u11l1n82&amp;minimized_u11l1n82_value=true"><img title="Minimize IIT Today channel to present less information" alt="Minimize IIT Today channel to present less information" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/min.gif" width="16" height="16" border="0"></a><img src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/chan_remove_na.gif" width="16" height="16"></td></tr><tr><td width="100%" colspan="2"><?xml version="1.0" encoding="UTF-8"?><iframe width="100%" frameborder="no" height="400" src="https://webmaster.iit.edu/portal/my_news.php">dummyText</iframe></td></tr></table></div></td></tr><tr><td><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="20" alt=""></td></tr></table></td><td class="vrule" width="1"><img height="1" width="14" title="" alt="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif"></td><td valign="top" width="35%"><table width="100%" id="channel" cellspacing="0" cellpadding="0" border="0" align="center"><tr><td class="bg1"><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="4" alt=""></td></tr><tr><td><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="1" alt=""></td></tr><tr><td class="bgmlight"><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="1" alt=""></td></tr><tr><td><div class="border"><table width="100%" cellspacing="0" cellpadding="3" border="0" align="center"><tr><td class="iit-bg-gray"><span class="uportal-head14-bold">Public Safety</span></td><td valign="top" nowrap="nowrap" class="iit-bg-gray" align="right"><a onmouseover="window.status=''; return true;" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_root=u11l1n55&amp;padding=true"><img title="Expand Public Safety channel to fill screen" alt="Expand Public Safety channel to fill screen" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/focus.gif" width="16" height="16" border="0"></a><a onmouseover="window.status=''; return true;" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_tcattr=minimized&amp;minimized_channelId=u11l1n55&amp;minimized_u11l1n55_value=true"><img title="Minimize Public Safety channel to present less information" alt="Minimize Public Safety channel to present less information" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/min.gif" width="16" height="16" border="0"></a><img src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/chan_remove_na.gif" width="16" height="16"></td></tr><tr><td width="100%" colspan="2"><?xml version="1.0" encoding="UTF-8"?><iframe width="100%" frameborder="no" height="220" src="https://pws.iit.edu/ch/rgtv4f28/public-safety?my=prod">dummyText</iframe></td></tr></table></div></td></tr><tr><td><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="20" alt=""></td></tr></table><table width="100%" id="channel" cellspacing="0" cellpadding="0" border="0" align="center"><tr><td class="bg1"><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="4" alt=""></td></tr><tr><td><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="1" alt=""></td></tr><tr><td class="bgmlight"><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="1" alt=""></td></tr><tr><td><div class="border"><table width="100%" cellspacing="0" cellpadding="3" border="0" align="center"><tr><td class="iit-bg-gray"><span class="uportal-head14-bold">IIT Personal ID Numbers</span></td><td valign="top" nowrap="nowrap" class="iit-bg-gray" align="right"><a onmouseover="window.status=''; return true;" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_root=u11l1n104&amp;padding=true"><img title="Expand IIT Personal ID Numbers channel to fill screen" alt="Expand IIT Personal ID Numbers channel to fill screen" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/focus.gif" width="16" height="16" border="0"></a><a onmouseover="window.status=''; return true;" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_tcattr=minimized&amp;minimized_channelId=u11l1n104&amp;minimized_u11l1n104_value=true"><img title="Minimize IIT Personal ID Numbers channel to present less information" alt="Minimize IIT Personal ID Numbers channel to present less information" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/min.gif" width="16" height="16" border="0"></a><img src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/chan_remove_na.gif" width="16" height="16"></td></tr><tr><td width="100%" colspan="2"><?xml version="1.0" encoding="UTF-8"?><iframe width="100%" frameborder="no" height="150" src="http://my.iit.edu:80/cp/ip/login?sys=cwidsso&amp;url=https%3A%2F%2Fmy101.iit.edu%2Fcwidsso%2Fchannel.jsp">dummyText</iframe></td></tr></table></div></td></tr><tr><td><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="20" alt=""></td></tr></table><table width="100%" id="channel" cellspacing="0" cellpadding="0" border="0" align="center"><tr><td class="bg1"><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="4" alt=""></td></tr><tr><td><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="1" alt=""></td></tr><tr><td class="bgmlight"><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="1" alt=""></td></tr><tr><td><div class="border"><table width="100%" cellspacing="0" cellpadding="3" border="0" align="center"><tr><td class="iit-bg-gray"><span class="uportal-head14-bold">Community Support</span></td><td valign="top" nowrap="nowrap" class="iit-bg-gray" align="right"><a onmouseover="window.status=''; return true;" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_root=u11l1n140&amp;padding=true"><img title="Expand Community Support channel to fill screen" alt="Expand Community Support channel to fill screen" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/focus.gif" width="16" height="16" border="0"></a><a onmouseover="window.status=''; return true;" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_tcattr=minimized&amp;minimized_channelId=u11l1n140&amp;minimized_u11l1n140_value=true"><img title="Minimize Community Support channel to present less information" alt="Minimize Community Support channel to present less information" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/min.gif" width="16" height="16" border="0"></a><img src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/chan_remove_na.gif" width="16" height="16"></td></tr><tr><td width="100%" colspan="2"><?xml version="1.0" encoding="UTF-8"?><iframe width="100%" frameborder="no" height="400" src="https://pws.iit.edu/ch/ufxwxd7h/community-support?my=prod">dummyText</iframe></td></tr></table></div></td></tr><tr><td><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="20" alt=""></td></tr></table><table width="100%" id="channel" cellspacing="0" cellpadding="0" border="0" align="center"><tr><td class="bg1"><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="4" alt=""></td></tr><tr><td><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="1" alt=""></td></tr><tr><td class="bgmlight"><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="1" alt=""></td></tr><tr><td><div class="border"><table width="100%" cellspacing="0" cellpadding="3" border="0" align="center"><tr><td class="iit-bg-gray"><span class="uportal-head14-bold">Google Search</span></td><td valign="top" nowrap="nowrap" class="iit-bg-gray" align="right"><a onmouseover="window.status=''; return true;" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_root=u11l1n58&amp;padding=true"><img title="Expand Google Search channel to fill screen" alt="Expand Google Search channel to fill screen" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/focus.gif" width="16" height="16" border="0"></a><a onmouseover="window.status=''; return true;" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_tcattr=minimized&amp;minimized_channelId=u11l1n58&amp;minimized_u11l1n58_value=true"><img title="Minimize Google Search channel to present less information" alt="Minimize Google Search channel to present less information" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/min.gif" width="16" height="16" border="0"></a><a onmouseover="window.status=''; return true;" onclick="return confirm('Are you sure you want to remove the Google Search channel from your layout?')" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_remove_target=u11l1n58"><img title="Remove Google Search channel from your layout" alt="Remove Google Search channel from your layout" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/remove.gif" width="16" height="16" border="0"></a></td></tr><tr><td width="100%" colspan="2"><?xml version="1.0" encoding="UTF-8"?><iframe width="100%" frameborder="no" height="235" src="https://webmaster.iit.edu/portal/googleSearch.html">dummyText</iframe></td></tr></table></div></td></tr><tr><td><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="20" alt=""></td></tr></table><table width="100%" id="channel" cellspacing="0" cellpadding="0" border="0" align="center"><tr><td class="bg1"><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="4" alt=""></td></tr><tr><td><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="1" alt=""></td></tr><tr><td class="bgmlight"><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="1" alt=""></td></tr><tr><td><div class="border"><table width="100%" cellspacing="0" cellpadding="3" border="0" align="center"><tr><td class="iit-bg-gray"><span class="uportal-head14-bold">IIT In the news</span></td><td valign="top" nowrap="nowrap" class="iit-bg-gray" align="right"><a onmouseover="window.status=''; return true;" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_root=u11l1n93&amp;padding=true"><img title="Expand IIT In the news channel to fill screen" alt="Expand IIT In the news channel to fill screen" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/focus.gif" width="16" height="16" border="0"></a><a onmouseover="window.status=''; return true;" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_tcattr=minimized&amp;minimized_channelId=u11l1n93&amp;minimized_u11l1n93_value=true"><img title="Minimize IIT In the news channel to present less information" alt="Minimize IIT In the news channel to present less information" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/min.gif" width="16" height="16" border="0"></a><a onmouseover="window.status=''; return true;" onclick="return confirm('Are you sure you want to remove the IIT In the news channel from your layout?')" href="tag.feb19849ed9f63be.render.userLayoutRootNode.uP?uP_remove_target=u11l1n93"><img title="Remove IIT In the news channel from your layout" alt="Remove IIT In the news channel from your layout" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/controls/remove.gif" width="16" height="16" border="0"></a></td></tr><tr><td width="100%" colspan="2"><?xml version="1.0" encoding="UTF-8"?><iframe width="100%" frameborder="no" height="300" src="https://webmaster.iit.edu/portal/my_iit_in_the_news.php">dummyText</iframe></td></tr></table></div></td></tr><tr><td><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="20" alt=""></td></tr></table></td></tr><tr><td width="25%"><img height="3" width="10" title="" alt="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif"></td><td><img height="3" width="1" title="" alt="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif"></td><td width="45%"><img height="3" width="10" title="" alt="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif"></td><td><img height="3" width="1" title="" alt="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif"></td><td width="35%"><img height="3" width="10" title="" alt="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif"></td></tr></table></span><table width="100%" cellspacing="0" cellpadding="0" border="0"><tr><td colspan="3" class="bgtabon"><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="2" alt=""></td></tr><tr><td colspan="3"><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="5" alt=""></td></tr><tr><td><table width="100%" cellspacing="5" cellpadding="5" border="0"><tr><td width="100%" valign="top"><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="5" alt=""><br clear="all"><img width="2" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" hspace="0" height="40" alt="" align="left"></td><td valign="top" nowrap="" align="right"><img width="1" title="" src="/media/org/jasig/portal/layout/dlm/skins/iit-iv/skin/transparent.gif" height="5" alt=""><br><span id="totop_ftr" class="uportal-text-small"><a onmouseover="window.status=''; return true;" href="#TOP"><B>Top</B></a></span></td><td width="179" align="right"><a href="http://www.iit.edu"><img width="179" title="Illinois Institute of Technology" src="/cps/images/misc/foot_logo.gif" height="52" border="0" alt="Illinois Institute of Technology"></a></td></tr></table></td></tr></table><script language="JavaScript">
+                  function OpenNotice()
+                  {
+                      stats='resizable=no,scrollbars=no,toolbar=no,location=no,directories=no,status=no,menubar=no,';
+                      stats += 'width=600,height=400';
+                      noticeWindow = window.open ( /*URL*/ "/jsp/misc/tmNotice.jsp","tmNotice",stats);
+                      setTimeout ("noticeWindow.focus ()", 500);
+                  }
+                </script></td></tr></table><script src="/jsp/lib/timeout.jsp" language="JavaScript"></script></body></html>

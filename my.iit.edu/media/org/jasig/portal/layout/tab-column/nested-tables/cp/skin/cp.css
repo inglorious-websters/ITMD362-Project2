@@ -1,0 +1,584 @@
+BODY {
+	color: #ca0000;
+	background: #cb0000;
+	font-family: verdana, helvetica, arial, sans-serif;
+	margin: 0px;
+	background-repeat: repeat-x;
+	background-position: top left;
+}
+
+.textform {
+	color: Black;
+	font-family: verdana, helvetica, arial, sans-serif;
+	font-size: 10px;
+}
+
+.uportal-head14-bold {
+	color: Black;
+	font-family: verdana, helvetica, arial, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.uportal-text11-bold {
+	color: Black;
+	font-family: verdana, helvetica, arial, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+.uportal-text12-bold {
+	color: Black;
+	font-family: verdana, helvetica, arial, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.uportal-head24 {
+	color: Black;
+	font-family: verdana, helvetica, arial, sans-serif;
+	font-size: 24px;
+}
+
+.uportal-text {
+	color: Black;
+	font-family: verdana, helvetica, arial, sans-serif;
+	font-size: 12px;
+}
+
+.uportal-text-small {
+	color: Black;
+	font-family: verdana, helvetica, arial, sans-serif;
+	font-size: 10px;
+}
+
+.uportal-button {
+	color: Black;
+	font-family: verdana, helvetica, arial, sans-serif;
+	font-size: 10px;
+	background: #CCCCFF;
+}
+
+.uportal-label {
+	color: Black;
+	font-family: verdana, helvetica, arial, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+.uportal-input-text {
+	color: Black;
+	font-size: 12px;
+	font-family: verdana, helvetica, arial, sans-serif;
+	background: #CCCCFF;
+}
+
+.uportal-text-reversed {
+	color: White;
+	font-family: verdana, helvetica, arial, sans-serif;
+	font-size: 12px;
+}
+
+A.uportal-nav-small-white {
+	color: #ffffff;
+	font-family: verdana, helvetica, arial, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+A.uportal-nav-small-black {
+	color: #000000;
+	font-family: verdana, helvetica, arial, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+A.uportal-navigation-category {
+	color: Black;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+A.uportal-navigation-category:visited {
+	color: Black;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+A.uportal-navigation-category:hover {
+	color: #666699;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.uportal-navigation-category-selected {
+	font-size: 12px;
+	font-weight: bold;
+	color: #666699;
+}
+
+A.uportal-navigation-channel {
+	color: Black;
+	font-size: 12px;
+}
+
+A.uportal-navigation-channel:visited {
+	color: Black;
+	font-size: 12px;
+}
+
+A.uportal-navigation-channel:hover {
+	color: #666699;
+	font-size: 12px;
+}
+
+.uportal-navigation-channel-selected {
+	background: Black;
+	font-size: 12px;
+	color: White;
+}
+
+.uportal-crumbtrail {
+	font-family: verdana, helvetica, arial, sans-serif;
+	font-size: 10px;
+	color: #666666;
+}
+
+.uportal-copyright {
+	font-family: verdana, helvetica, arial, sans-serif;
+	font-size: 11px;
+	color: Black;
+	font-style: italic;
+}
+
+.uportal-channel-text {
+	color: Black;
+	font-family: verdana, helvetica, arial, sans-serif;
+	font-size: 12px;
+}
+
+.uportal-channel-title {
+	color: Black;
+	font-family: verdana, helvetica, arial, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.uportal-channel-title-reversed {
+	color: #FFFFFF;
+	font-family: verdana, helvetica, arial, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.uportal-channel-subtitle {
+	color: #999999;
+	font-family: verdana, helvetica, arial, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.uportal-channel-subtitle-reversed {
+	color: #333333;
+	font-family: verdana, helvetica, arial, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.uportal-channel-emphasis {
+	font-weight: bold;
+	font-size: 12px;
+	font-family: verdana, helvetica, arial, sans-serif;
+}
+
+.uportal-channel-strong {
+	font-weight: bold;
+	font-size: 12px;
+	font-family: verdana, helvetica, arial, sans-serif;
+}
+
+.uportal-channel-code {
+	color: Black;
+	font-size: 12px;
+	font-family: verdana, helvetica, arial, sans-serif;
+}
+
+.uportal-channel-copyright {
+	font-family: verdana, helvetica, arial, sans-serif;
+	font-size: 11px;
+	color: Black;
+	font-style: italic;
+}
+
+.uportal-channel-warning {
+	font-size: 14px;
+	font-family: verdana, helvetica, arial, sans-serif;
+	font-weight: bold;
+	color: #FF0000;
+}
+
+.uportal-channel-error {
+	color: Black;
+	font-size: 11px;
+	font-family: verdana, helvetica, arial, sans-serif;
+}
+
+.uportal-channel-table-caption {
+	color: #6666FF;
+	font-family: verdana, helvetica, arial, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.uportal-channel-table-header {
+	color: #666699;
+	font-family: verdana, helvetica, arial, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: left;
+}
+
+.uportal-channel-table-row-even {
+	color: Black;
+	font-size: 11px;
+	font-family: verdana, helvetica, arial, sans-serif;
+}
+
+.uportal-channel-table-row-odd {
+	color: #666666;
+	font-size: 11px;
+	font-family: verdana, helvetica, arial, sans-serif;
+}
+
+.uportal-background {
+	background: #FFFFFF;
+}
+
+.uportal-background-dark {
+	background: #666699;
+}
+
+.uportal-background-med {
+	background: #CCCCCC;
+}
+
+.uportal-background-light {
+	background: #EFEFEF;
+}
+
+.uportal-background-content {
+	background: #FFFFFF;
+}
+
+.uportal-background-highlight {
+	background: #FFFFCC;
+}
+
+.uportal-background-shadow {
+	background: #000000;
+}
+
+.bgmlight {
+	background-color: #999999;
+}
+
+.uportal-background-warning {
+	background-color: #ff0000;
+}
+
+.border {
+	width: auto;
+	margin: 0px 0px 0px 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-right: 0px;
+	padding-left: 0px;
+	border: solid;
+	border-top-width: 0px;
+	border-bottom-width: 1px;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-color: #999999;
+}
+
+/*===============================================================
+	IIT CONVERTED STYLES FOR PORTAL USE
+----------------------------------------------------------------------------------------------*/
+/* ===========> LINK STYLES <=========== */
+a, a:link {
+	/*font-family: Helvetica, Verdana, Sans-Serif;
+	font-size: 11px;*/
+	color: #efefef;
+	text-decoration: none;
+}
+
+a:visited {
+	/*font-size: 11px;*/
+	color: #efefef;
+	text-decoration: none;
+}
+
+a:hover {
+	/*font-size: 11px;*/
+	color: #333;
+	text-decoration: underline;
+}
+
+a:active {
+	/*font-size: 11px;*/
+}
+
+/* Adjustment for login page */
+.text10 {
+    font-size: 11px;
+}
+
+/* ===========> SMALL TEXT STYLES <=========== */
+.bodycopy { /*Standard small copy*/
+	font-family: Helvetica, Verdana, Sans-Serif;
+	font-size: 11px;
+	color: #000;
+}
+
+.bodycopyRed { /*Standard small copy red*/
+	font-family: Helvetica, Verdana, Sans-Serif;
+	font-size: 11px;
+	color: #cc0000;
+}
+
+.bodycopyDarkGray { /*Standard small copy dark gray*/
+	font-family: Helvetica, Verdana, Sans-Serif;
+	font-size: 11px;
+	color: #555;
+}
+
+.bodycopyLightGray { /*Standard small copy light gray*/
+	font-family: Helvetica, Verdana, sans-serif;
+	font-size: 11px;
+	color: #777;
+}
+
+/* ===========> LARGE TEXT STYLES <=========== */
+.bodycopyLarge { /*Standard large copy*/
+	font-family: Helvetica, Verdana, sans-serif;
+	font-size: 13px;
+	color: #000;
+}
+
+.bodycopyRedLarge { /*Standard large copy red */
+	font-family: Helvetica, Verdana, Sans-Serif;
+	font-size: 13px;
+	color: #cc0000;
+}
+
+/* ===========> HEADLINE TEXT STYLES <=========== */
+h1 { /*Standard headline black bold*/
+	font-family: Helvetica, Verdana, Sans-Serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #000;
+	margin: 0px;
+}
+
+h1 #Red { /*Standard headline red bold*/
+	font-family: Helvetica, Verdana, Sans-Serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #cc0000;
+	margin: 0px;
+}
+
+h2 { /*Smaller headline black bold*/
+	font-family: Helvetica, Verdana, Sans-Serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #000;
+	margin: 0px;
+}
+
+h2 #Red { /*Smaller headline red bold*/
+	font-family: Helvetica, Verdana, Sans-Serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #CC0000;
+	margin: 0px;
+}
+
+h3 { /*Same as  black bodycopy with bold*/
+	font-family: Helvetica, Verdana, Sans-Serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #000;
+	margin: 0px;
+}
+
+h3 #Red { /*Smaller headline red bold*/
+	font-family: Helvetica, Verdana, Sans-Serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #cc0000;
+	margin: 0px;
+}
+
+h4 {
+	font-family: Helvetica, Verdana, Sans-Serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #000;
+	margin: 0px;
+}
+
+h4 #Red {
+	font-family: Helvetica, Verdana, Sans-Serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #cc0000;
+	margin: 0px;
+}
+
+/* ===========> LIST / BULLET STYLES <=========== */
+#bulletsqblack li { /*Unordered list with black sqaure bullets*/
+	list-style-image: url("/media/iit/images/bulletsqblack.jpg");
+}
+
+#bullet_redarrows li { /*Unordered list with 2 red arrow bullets*/
+	list-style-image: url("/media/iit/images/bullet_redarrows.gif");
+}
+
+#redCircles {
+	list-style-image: url("/media/iit/images/red_circle.gif");
+}
+
+#redSquares li {
+	padding-bottom: 5px;
+}
+
+/* ===========> TABLE/CELL BORDERS <=========== */
+/* ------- DOTTED BORDERS ------- */
+#bottomDotted { /*Dotted table cell bottom*/
+	padding: 4px;
+	border-bottom: 1px dotted #999;
+}
+
+#topDotted { /*Dotted table cell top*/
+	padding: 4px;
+	border-top: 1px dotted #999;
+}
+
+#rightDotted { /*Dotted table cell right*/
+	padding: 4px;
+	border-right: 1px dotted #999;
+}
+
+#leftDotted { /*Dotted table cell left*/
+	padding: 4px;
+	border-left: 1px dotted #999;
+}
+
+#tableDotted { /*Dotted table outline*/
+	padding: 4px;
+	border: 1px dotted #999;
+}
+
+#listDottedSmall td {
+	font-size: 10px;
+	border-bottom: 1px dotted #999;
+}
+
+/* ------- SOLID BORDERS ------- */
+#bottomSolid { /*Solid table cell bottom*/
+	padding: 4px;
+	border-bottom: 1px solid #999;
+}
+
+#topSolid { /*Solid table cell top*/
+	padding: 4px;
+	border-top: 1px solid #999;
+}
+
+#rightSolid { /*Solid table cell right*/
+	padding: 4px;
+	border-right: 1px solid #999;
+}
+
+#leftSolid { /*Solid table cell left*/
+	padding: 4px;
+	border-left: 1px solid #999;
+}
+
+#tableSolid { /*Solid table outline*/
+	padding: 4px;
+	border: 1px solid #999;
+}
+
+#tableSolidLight { /*Solid table outline*/
+	padding: 4px;
+	border: 1px solid #e4e4e4;
+}
+
+/* ===========> LAYOUT SPECIFIC STYLES <=========== */
+#ChannelTable {
+	font-size: 10px;
+	border: 1px solid #999;
+	padding: 4px;
+	width: 100%;
+}
+
+#ChannelTable td, #ChannelTable p, #ChannelTable span {
+	font-size: 10px;
+	width: 100%;
+}
+
+.HintBox {
+	background-color: #eee;
+	padding: 3px;
+	font-size: 10px;
+	border-top: 1px dotted #999;
+	border-bottom: 1px solid #999;
+}
+
+#leftColumn {
+	background-color: #fede0d;
+}
+
+#sideHeader {
+	background-color: #ccc;
+	border-top: 1px solid #999;
+	border-right: 1px solid #999;
+	border-left: 1px solid #999;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 4px;
+}
+
+#sideContent {
+	background-color: #ff0000;
+	border-bottom: 1px solid #999;
+	border-right: 1px solid #999;
+	border-left: 1px solid #999;
+	font-size: 11px;
+	padding: 5px;
+}
+
+#sideFAQ {
+	font-size: 11px;
+	color: #666;
+}
+
+#mainContainer {
+	padding-left: 20px;
+}
+
+#mainColumn {
+	padding-right: 6px;
+	border-right: 2px solid #eee;
+	min-height: 300px;
+	font-size: 12px;
+}
+
+#rightColumn {
+	padding-left: 6px;
+	padding-right: 6px;
+	font-size: 11px;
+}

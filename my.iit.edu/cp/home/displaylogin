@@ -1,0 +1,605 @@
+ 
+ 
+ 
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>Illinois Institute of Technology Login</title>
+<script language="JavaScript" src="/js/clientsniffer.js"></script>
+<script language="JavaScript" src="/js/util.js"></script>
+<script language="JavaScript" src="/js/iit_functions.js"></script>
+<script language="javascript1.1">
+<!-- (hide from old browsers)
+var userpwdFocus = false;
+var hasRecovery = true
+function hadFocus(set)
+{
+    if (set) userpwdFocus = true;
+    return userpwdFocus;
+}
+
+function getCookie(name) 
+{
+    var search = name + "="
+    if (document.cookie.length > 0) 
+    {
+        // if there are any cookies
+        offset = document.cookie.indexOf(search)
+        if (offset != -1) 
+        { // if cookie exists
+            offset += search.length // set index of beginning of value
+            end = document.cookie.indexOf(";", offset) // set index of end of cookie value
+            if (end == -1)
+                end = document.cookie.length
+            return unescape(document.cookie.substring(offset, end))
+        }
+    }
+}
+
+function clearCache()
+{
+    var name="usid"
+    var value="chocolate-chip-cookies"
+    cookie= name + "=" + value + "; path=/; domain=.iit.edu; expires=" + (new Date(0)).toGMTString();
+    if (getCookie (name) != value) document.cookie = cookie;
+    doCancel();
+}
+
+function doCancel()
+{
+    document.userid.user.value='';
+    document.cplogin.user.value='';
+    document.cplogin.pass.value='';
+}
+
+function OpenWin(w)
+{
+    var unDefined;
+
+    if (w == "help")
+    {
+        stats='resizable=yes,toolbar=no,location=no,directories=no,status=yes,menubar=no,'
+        stats += 'scrollbars=yes,width=650,height=475';
+        helpWindow = window.open ("http://my.iit.edu/site/loginhelp.html","helpWindow",stats)
+        setTimeout ("helpWindow.focus ()", 500);
+    }
+}
+
+function xferFocus()
+{
+    document.cplogin.pass.focus();
+}
+
+var clientServerDelta = (new Date()).getTime() - 1510088153193;
+function login()
+{
+    setQueryAsCookie();
+    document.cplogin.user.value=document.userid.user.value;
+    if ( document.cplogin.uuid )
+    {
+        document.cplogin.uuid.value=(new Date()).getTime() - clientServerDelta;
+    }
+    document.cplogin.submit();
+}
+
+function setQueryAsCookie()
+{
+    var query = document.location.search;
+    if (query.length > 1) {
+        document.cookie = "query=" + encodeURIComponent(query) + "; path=/; domain=.iit.edu;"
+    } else {
+        // kill any previous query cookie setup
+        document.cookie = "query=; path=/; domain=.iit.edu; expires=" + (new Date(0)).toGMTString();
+    }
+}
+
+var size = "15";
+if ( ( is_nav4up || is_ie4up ) && is_mac ) { size = "12"; }
+else if ( is_nav4_7up) { size = "10"; }
+
+//-->
+</script>
+ 
+ 
+
+
+
+
+<link rel="stylesheet" href="/misc/style.css" type="text/css">
+<link rel="stylesheet" href="/custom/iit-iv/custom.css" type="text/css">
+<link rel="stylesheet" href="/cp/content/style.css" type="text/css">
+
+
+
+</head>
+<body marginwidth="0" marginheight="0" topmargin="0" leftmargin="0" onLoad="if (!hadFocus(false)) document.userid.user.focus();">
+<a name="TOP"></a>
+ <!-- <img src="http://email.iit.edu:6777/cmd.msc?sid=&mbox=&cmd=logout&laurel=on" width="1" height="1"> -->
+<table border="0" cellpadding="0" cellspacing="10" width="100%">
+  <tr>
+    <td valign="top">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr><td class="bg1" height="74"><DIV><table width="100%" border="0" cellpadding="0" cellspacing="0" background="/media/iit/images/head_bkg_brw3.gif">  <tr>    <td><img src="/media/iit/images/header_blk_red.gif" alt="My IIT " width="800" height="101" border="0" usemap="#Map" /></td>  </tr></table><map name="Map" id="Map">  <area shape="rect" coords="64,5,445,16" href="http://www.iit.edu/" /></map></DIV></td></tr>
+        <tr><td class="bg3"><img src="/cps/images/misc/dot-blank.gif" height="3" width="1"></td></tr>
+        <tr><td><img src="/cps/images/misc/dot-blank.gif" height="15" width="1"></td></tr>
+      </table>	
+      <!-- *** *** -->
+      
+      
+      
+      <link rel="stylesheet" href="/media/org/jasig/portal/layout/tab-column/nested-tables/cp/skin/cp.css" type="text/css">
+
+<table width="78%" cellpadding="0" cellspacing="0" border="0" style="border-bottom: 1px dotted #ccc; max-width: 1200px;">
+    <tr>
+        <td width="217" valign="top" align="center" id="leftColumn"><br />
+            <table width="210" cellpadding="0" cellspacing="0" border="0" style="padding-left: 5px;">
+                <tr>
+                    <td id="sideHeader">Login</td>
+                </tr>
+                <tr>
+                    <td id="sideContent">
+                        <form name="userid" id="userid" onsubmit="xferFocus(this); return false;">
+                            Username: <br />
+                            <script language="JavaScript1.2" type="text/javascript">
+
+           		document.writeln("<input class=\"textform\" type=\"text\" name=\"user\" size=\"" + size + "\" tabindex=1 onFocus=\"hadFocus(true);\"><br />");
+
+          	</script>
+                        </form>
+                        <form action="https://my.iit.edu/cp/home/login" method="post" name="cplogin" id="cplogin" onsubmit="login(); return false;">
+                            Password: <br />
+                            <script language="JavaScript1.2" type="text/javascript">
+
+         	  	document.writeln("<input class=\"textform\" type=\"password\" name=\"pass\" size=\"" + size + "\" tabindex=2 onFocus=\"hadFocus(true);\">");
+
+            </script>
+                            <input type="hidden" name="user" value="" />
+                            <input type="hidden" name="uuid" value=""/ >
+
+                            <br />
+<br>
+
+<input type="button" class="btn" name="login_btn" value="Login" onclick="login();" tabindex="3"/>
+<input type="button" class="btn" name="cancel_btn" value="Clear" onclick="doCancel();" tabindex="4"/>
+<br><br>
+
+<script language="JavaScript1.2">
+ document.writeln("<span class=\"text10\" ><a href=\"https://my.iit.edu/cp/myqa/answer/start\" onMouseover=\"window.status=''; return true;\">Forget Password?</a></span>");
+</script>
+<br><br>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                   <td>&nbsp;</td> 
+ <td align="center" colspan="2" class="btn">
+                </td>
+
+                </tr>
+
+  <tr><td align="center" colspan="2">
+</td></tr>
+
+                <tr>
+                    <td id="sideHeader">Support Information </td>
+                </tr>
+                <tr>
+                    <td id="sideContent">
+                        <h4 id="Red">Trouble logging in?</h4>
+                        <a href="javascript:toggleLayer('Hint1');">here's help &raquo;</a>
+                        <div id="Hint1" class="HintBox" style="display: none;"> Your
+                            username and password are the same as the username
+                            and password of your username@iit.edu email account.
+                            Do not include &quot;@iit.edu&quot; when logging
+                            in to myIIT. <br />
+                            <br />
+                            If your email account is:<br />
+                            <ul id="bulletsqblack">
+                                <li>username@kentlaw.edu</li>
+                                <li>username@stuart.iit.edu </li>
+                                <li>username@id.iit.edu</li>
+                            </ul>
+                            then you must use your UID in order to access myIIT.
+                            For help, contact the <a href="http://support.iit.edu" target="new">OTS
+                            Support Desk</a> or call 312.567.3375. <br />
+                            <br />
+                            Forgot your UID?
+                            <ul id="bulletsqblack">
+                                <li><a href="http://myuid.iit.edu/" target="new">All
+                                        Users &raquo;</a></li>
+                            </ul>
+                            Forgot your CWID? Contact <a href="http://support.iit.edu/" target="new">OTS
+                            Support Desk</a> or 312.567.3375. Adjunct Faculty
+                            - Can't locate your credentials? Contact <a href="http://support.iit.edu" target="new">OTS
+                            Support Desk</a> or 312.567.3375. <br />
+                            <br />
+                            <a href="javascript:toggleLayer('Hint1');">(Hide
+                            Me)</a> </div>
+                        <br />
+                        <br />
+                        <h4 id="Red">Which browsers are supported?</h4>
+                        <a href="javascript:toggleLayer('Hint2');">here's help &raquo;</a>
+                        <div id="Hint2" class="HintBox" style="display: none;"> To
+                            log in and use the system, you must supply a valid
+                            username and password and be using a recent version
+                            of a standard Internet browser such as Microsoft
+                            Internet Explorer or Mozilla Firefox.<br />
+                            <br />
+                            Browser support details:<br />
+                            <br />
+                            <b>Supported browsers</b><br />
+                            To log in and use the system effectively, you should
+                            be using one of the following Internet browsers <br />
+                            <table cellpadding="2" cellspacing="0" border="0" id="listDottedSmall">
+                                <tr>
+                                    <td colspan="2"><b><font color="#cc0000">Windows</font></b></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>Internet Explorer 5.x (latest version)
+                                        and 6.0 SP2</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>Netscape 7.2 and 8.1</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>Firefox 1.5.0.1, 1.0.7, and 2.0</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><b><font color="#cc0000">Macintosh
+                                                OS 9</font></b></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>Netscape 7.0</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><b><font color="#cc0000">Macintosh
+                                                OS X v10.3</font></b></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>Netscape 7.2</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>Mozilla 1.7.12</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>Firefox 1.5.0.1 and 2.0</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>Safari 1.3.9</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><b><font color="#cc0000">Macintosh
+                                                OS X v10.4</font></b></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>Netscape 7.2</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>Firefox 1.5.0.1</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>Safari 2.0</td>
+                                </tr>
+                            </table>
+                            <br />
+                            <a href="javascript:toggleLayer('Hint2');">(Hide
+                            Me)</a> </div>
+                        <br />
+                        <br />
+                        <h4 id="Red">Comments and suggestions?</h4>
+                        
+            <a href="mailto:myiit@iit.edu">contact us (DO NOT use for tech support) &raquo;</a>
+            <div id="Hint3" class="HintBox" style="display: none;"> <b>Question</b>:
+How do I customize myIIT?<br />
+                            <b>Answer:</b> You can easily customize myIIT by
+                            adding new channels and tabs and removing those that
+                            are not useful to you. To customize your view of
+                            the portal, click the Content/Layout link in the
+                            upper left hand portion of the screen. Click the
+                            tab you want to change. You can then add, modify,
+                            or delete columns and channels on that tab. When
+                            you are finished click the back to link to return
+                            to myIIT. If you cannot figure out how to do something
+                            on a tab, click the Help icon in the upper right
+                            corner of the myIIT screen. Under the Portal Help
+                            Menu select How Do I... to get help on adding, modifying,
+                            or deleting columns, channels, and tabs. <br />
+                            <br />
+                            <b>Question:</b> How can I get back to the original
+                            look (default view) of the portal?<br />
+                            <b>Answer:</b> On the myIIT login screen, click in
+                            the box Reset Your myIIT Profile. NOTE: When your
+                            layout is re-created you will lose your bookmark
+                            settings and ALL customizations made to ALL TABS
+                            and CHANNELS. Your Calendars and email will not be
+                            affected. <br />
+                            <br />
+                            <b>Question:</b> Can I import bookmarks into myIIT?<br />
+                            <b>Answer:</b> Bookmarks cannot be imported into
+                            myIIT at this time. You can add bookmarks individually
+                            to the myIIT Bookmark channel on the Welcome tab. <br />
+                            <br />
+                            <b>Question:</b> I have a great idea for a new channel.
+                            How can I contribute a channel to myIIT?<br />
+                            <b>Answer:</b> Email your idea to myIIT@iit.edu. <br />
+                            <br />
+                            <b>Question:</b> How do I join a group?<br />
+                            <b>Answer:</b> Select the Groups icon in the upper
+                            right corner of the myIIT screen, then select the
+                            Groups Index tab to browse the list of available
+                            on-line groups and request membership. <br />
+                            <br />
+                            <b>Question:</b> How do I create a group?<br />
+                            <b>Answer:</b> Select the Groups icon in the upper
+                            right corner of the myIIT screen, then select Create
+                            Group to begin your application. Groups are available
+                            to faculty and staff academic, interest and project
+                            teams. Student academic groups must be requested
+                            by a faculty sponsor. Student social and other interest
+                            groups must be registered student organizations with
+                            the Office of Student Activities. Those groups also
+                            must be requested by the organization's faculty sponsor.<br />
+                            <br />
+                            <b><font color="#cc0000">Portal Calendar</font></b><br />
+                            <b>Question:</b> What calendars are available?<br />
+                            <b>Answer:</b> All students, faculty and staff can
+                            use myIIT's free electronic portal calendar. <br />
+                            <br />
+                            <b>Question:</b> Can I combine my portal calendars?<br />
+                            <b>Answer:</b> Yes, your portal calendars may be
+                            combined by creating a calendar set. To create a
+                            Calendar Set, click the Portal Calendar icon in the
+                            upper right corner of the myIIT screen. Select the
+                            Calendar Sets tab. click the New Set icon. Enter
+                            a name for your calendar set in the Set Name box.
+                            For more help on calendar sets, click the Help icon
+                            in the upper right corner of the myIIT screen. Select
+                            Calendar, and then click the Calendar Sets Tab folder. <br />
+                            <br />
+                            <b><font color="#cc0000">Email</font></b><br />
+                            <b>Question:</b> How do I read my email in myIIT?<br />
+                            <b>Answer:</b> You can check your email via the Web
+                            using WebMail by clicking on the WebMail icon toward
+                            the top of any portal page. You can also select to
+                            have the webmail screen as a channel. <br />
+                            <br />
+                            <a href="javascript:toggleLayer('Hint3');">(Hide
+                            Me)</a> </div>
+                        <br />
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td id="sideHeader">Policies &amp; Guidelines</td>
+                </tr>
+                <tr>
+                    <td id="sideContent"><br />
+                        <a href="http://web.iit.edu/sites/web/files/departments/general-counsel/policies/procedure_q3_use_of_technology_resources.pdf" target="_blank">IIT
+                        Privacy Statement</a><br />
+                        (pdf - see sections IVand VI) <br />
+                        <br />
+                        <a href="http://ots.iit.edu/policies/" target="new">Office
+                        of Technology Services Acceptable Use Policy</a> </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td id="sideHeader">Students Go Mobile - Get HAWKi</td>
+                </tr>
+                <tr>
+                    <td id="sideContent"><br />
+                        <a href="https://itunes.apple.com/us/app/illinois-tech-mobile-hawki/id1078683087?mt=8" target="_blank"><img src="https://ots.iit.edu/sites/ots/files/elements/academic-applications/images/Download_on_the_App_Store_Badge_US-UK_135x40.svg" width="190" border="0"></a><br />
+                       <br />
+                        <a href="https://play.google.com/store/apps/details?id=com.dub.app.iitmobile&hl=en" target="_blank"><img src="https://play.google.com/intl/en_us/badges/images/apps/en-play-badge.png" width="190" border="0"></a><br />
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+        </td>
+        <td width="890" valign="top" id="mainContainer">
+            <table width="85%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td colspan="2" valign="top" align="left">
+                        <script type="text/javascript" src="//webmaster.iit.edu/portal/loginpage/portal-header.js"></script>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">&nbsp;</td> 
+                </tr>
+                <tr>
+                    
+          <td width="59%" valign="top" id="mainColumn">
+               <table width="624" border="0">
+                 <tr>
+                   <td height="117"><h1 class="style1">IIT Emergency Communication System Needs Your Action</h1></td>
+                   <td height="117"><img src="https://my.iit.edu/media/iit/images/iit_alert_header_portal.jpg" width="288" height="98" /></td>
+                 </tr>
+                 <tr>
+                   <td height="495" colspan="2" align="left" valign="top"><p>A new IIT Alert system is now in place to send immediate emails, text, and voice mail messages to active IIT faculty, staff, and students in the event of severe weather or an emergency that affects the safety of the IIT community on any of our campuses.</p>
+                     <p>Alerts are sent to IIT account holders including all @hawk.iit.edu, @iit.edu, @id.iit.edu, @kentlaw.iit.edu, and @stuart.iit.edu active email addresses. In order to ensure that the emergency alerts are received in a timely manner,<strong> please follow the three steps below to add mobile phone numbers (type without adding periods or hyphens), confirm your IIT email address and select additional alert preferences. For example, you can select the option to receive emergency alerts via text and voice mail messages, and non-IIT email addresses.</strong></p>
+                     <p> <strong>Please review your account as soon as possible to ensure you continue to receive IIT Alert notifications:</strong></p>
+<p>1. Click <a href="http://iit.regroup.com" target="_new">here</a> and use your myIIT username (not your full email address) and password.</p>
+<p>2. Enter your mobile phone number (type without adding periods or hyphens) and check the additional methods in which you would like to receive IIT Alert messages (these include text and voice messages and non-IIT email addresses). Note: In the event of an emergency, all account holders will automatically receive an email sent to their IIT email account.</p>
+<p>3. Save the form. Once you are finished, logout or close the browser.</p>
+<p>If you have any questions about this process, email Office of Technology Services (OTS) Support Desk at <a href="mailto:supportdesk@iit.edu">supportdesk@iit.edu</a> or call 312.567.3375.</p>
+<p><em>Note: If you sign up to receive text messages, you will receive a  &ldquo;send notify SMS&rdquo; message from info@regroup.com. This message indicates that your mobile phone number has been added to the system  successfully.</em></p></td>
+                 </tr>
+                 <tr>
+                   <td height="44" colspan="2"><h2 class="style1">Top Reasons to Like, Follow, Watch, and Join <br />
+                   the IIT Social Media Community</h2></td>
+                 </tr>
+                 <tr>
+                   <td width="390" height="164"><img src="https://my.iit.edu/media/iit/images/get_social_graphic.jpg" width="360" height="214" align="top" /></td>
+                   <td width="224" rowspan="2" valign="top"><ul>
+                     <li>Use technology to share your experiences with achieving a technology-focused education.</li>
+                     <li>Stay connected to your college and department. Get reminders about lectures, special learning opportunities, and fellow students' achievements.</li>
+                     <li> Friends you make now will last a lifetime. Your fellow students, in addition to faculty and staff, will become your professional allies.</li>
+                     <li>Make your voice heard across the IIT community. Your opinions count.</li>
+                     <li>Keep up with fun! Find out what's going on in The Bog and MTCC, and with more than 100 student organizations at IIT.</li>
+                     <li>Share interesting projects you're involved with and get help and ideas for them.</li>
+                     <li>Get to know the IIT community and its diverse cultures.</li>
+                   </ul></td>
+                 </tr>
+                 <tr>
+                   <td height="84" valign="top"><p>&nbsp;</p>
+                     <h2><a href="http://iit.edu/directory/social-media" target="_blank">Here are all the official IIT social media hangouts</a></h2>
+                   <p><img src="https://my.iit.edu/media/iit/images/social_media_portal_login.gif" width="281" height="45" /></p></td>
+                 </tr>
+               </table>
+            <hr />
+       <h2 class="style1">Need Help?</h2>
+                 <ul>
+          <li>Human Resources Help: <a href="mailto:hr@iit.edu">hr@iit.edu</a></li>
+                            <li>Registration help: <a href="mailto:registrar@iit.edu">registrar@iit.edu</a></li>
+                            
+              <li>Student Employment System help: <a href="mailto:seo1@iit.edu">seo1@iit.edu</a></li>
+                            <li>Technical support: <a href="mailto:supportdesk@iit.edu">supportdesk@iit.edu</a> <br />
+                                <a href="mailto:supportdesk@iit.edu"></a> or
+                                312.567.3375</li>
+</ul>
+                        <p><b>OTS Support Desk<br />
+                            </b>Office of Technology Services Support Desk handles
+                            all login, password and other technical support.
+                            See Support Information at left or go to the <a href="https://support.iit.edu">Support
+                            Desk website</a>.</p>
+                        <p>OTS Support Desk is located on the Upper
+                          Level of Paul V. Galvin Library on Main Campus and is open
+                          during regular Semester Operating Hours:<br />
+                          <br />
+                          Monday - Friday 8:30 am - 10 pm (no walk-in support,
+                          Friday 5 pm - 10 pm)<br />
+                        Saturday 8:30 am - 5 pm <br />
+                        Sunday Noon - 5 pm</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p><br />
+                        </p>
+                        <p>&nbsp;</p>
+          </td>
+                    <td width="41%" valign="top" id="rightColumn">
+                      <h3 align="left">Concerned About an IIT Student, Faculty or Staff Member?                      </h3>
+                      <table width="234" border="0">
+                        <tr>
+                          <td width="228" height="164"><img src="https://my.iit.edu/media/iit/images/cmty_support.gif" alt="community support logo" width="160" height="100" align="top" />                            <p>The <a href="http://web.iit.edu/community-support/" target="_blank">Community Support Team </a>assists members
+                        of the IIT community when they are concerned about, or
+                        troubled by, the behavior of a student, faculty member,
+                        or staff member. The Team can help direct you to the
+                        appropriate person, office or resources. See the Community                         Support channel on the Welcome Tab in myIIT.</p></td>
+                        </tr>
+                      </table>
+                      <h3><strong>Grow Your Career at IIT </strong></h3>
+<table width="233" border="0">
+  <tr>
+    <td><p><a href="http://www.iitri.iit.edu" target="_blank"><img src="https://my.iit.edu/media/iit/images/human_resources_people.jpg" alt="Human Resources Jobs Link" width="162" height="101" border="0" align="top" /></a></p>
+      <p>Office of Human Resources encourages current staff to
+        explore open positions across campus.
+        See the Human Resources Announcements channel on the
+        Work Tab inside myIIT for a list of new openings. </p>
+      <p><a href="http://www.iitri.iit.edu" target="_blank">View
+                details for current career opportunities at IIT</a></p></td>
+    </tr>
+  </table>
+<p><a href="http://www.iitri.iit.edu" target="_blank"></a></p>
+<hr />
+<h1><strong><font color="#cc0000">All Things Google</font></strong></h1>
+<h2><strong>Google Apps at IIT Websit</strong><strong>e</strong></h2>
+<p>Resources to help you get the most out of Google Apps for Education at IIT, the IIT Gmail interface and more.<br />
+  <br />
+  <a href="https://sites.google.com/a/iit.edu/iitgoogleapps" target="_blank">Visit the site</a></p>
+<hr />
+<h2><strong>Google Apps at IIT Discussion</strong></h2>
+<p>Share your
+  questions, experiences, and tips 'n' tricks on the &quot;Google
+  Apps at IIT Discussion&quot; group. <br />
+  <br />
+  Anyone in the IIT community may join the Google Group <a href="https://groups.google.com/a/iit.edu/group/google-apps-at-iit-discussion-group/topics?hl=en" target="_blank">here</a>.</p>
+<hr />
+<h2><strong>Google+ Important Requirement: Sign Up Using Accurate Birthdate </strong></h2>
+<p>Google has a strict requirement that all Google+ users must be 13  years of age or older. If you opt to establish a Google+ page, it is  essential that you enter a correct birthdate on the signup page. <a href="http://www.iit.edu/news/iittoday/?p=9314" target="_blank">Read more in <em>IIT Today</em>.</a></p>
+<p><a href="http://support.google.com/a/bin/answer.py?hl=en&amp;answer=1645514" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://support.google.com']);" target="_blank">Read more about Googleâs age requirement here</a>.</p>
+<hr />
+<h2><strong>Google Groups Interface </strong></h2>
+<p>Google's all-new version of Google Groups for Business
+  (including IIT Google Groups) makes it easier for teams,
+  workgroups, and public communities to manage and participate
+  in online discussions. </p>
+<p>Visit the <a href="http://learn.googleapps.com/groups" target="_blank">Google Apps
+  Learning Center</a> for more information
+  and support resources. </p>
+<hr />
+<h2></h2>
+<p>&nbsp; </p>                  
+</tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-10917923-3");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+      
+      
+      <!-- *** *** -->
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr><td><img src="/cps/images/misc/dot-blank.gif" width="1" height="5"></td></tr>
+        <tr><td>
+
+
+ 
+
+
+
+
+
+  <table width="100%" cellpadding="5" cellspacing="5" border="0">
+    <tr><td colspan="3"><img src="/cps/images/misc/dot-blank.gif" title="" width="1" height="5"></td></tr>
+    <tr>
+      <td valign="TOP" width="100%"><img src="/cps/images/misc/dot-blank.gif" title="" width="1" height="5"><br clear="all"><img src="/cps/images/misc/dot-blank.gif" title="" width="2" height="40" align="LEFT" hspace="0"><span id="copyright"></span></td>
+      <td valign="TOP" align="RIGHT" nowrap><img src="/cps/images/misc/dot-blank.gif" title="" width="1" height="5"><br><span class="totop" id="totop_ftr"><a href="#TOP" onMouseOver="window.status=''; return true;">Top</a></span></td>
+      <td width="179" align="RIGHT"><a href="http://www.iit.edu"><img src="/cps/images/misc/foot_logo.gif" alt="Illinois Institute of Technology"  title="Illinois Institute of Technology" width="179" height="52" border="0"></a></td>
+    </tr>
+  </table>
+  <script language="JavaScript">
+  function OpenNotice()
+  {
+      stats='resizable=no,scrollbars=no,toolbar=no,location=no,directories=no,status=no,menubar=no,';
+      stats += 'width=600,height=400';
+      noticeWindow = window.open ( /*URL*/ "/jsp/misc/tmNotice.jsp","tmNotice",stats)
+      setTimeout ("noticeWindow.focus ()", 500);
+  }
+  </script>
+
+</td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>
