@@ -1,15 +1,44 @@
 <!DOCTYPE html>
 <html lang="en" class="nojs">
-<head>
-  <title>MyIIT Login</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
-  <link rel="stylesheet" media="screen" href="screen.css" />
-</head>
-
-
-
-<body>
-
-
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Illinois Institute of Technology</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no"/>
+		<link rel="stylesheet" media="screen" href="screen.css"/>
+		<link rel="stylesheet" media="screen" href="styles.css" />
+  </head>
+  <body>
+		<header></header>
+		<div id="gridLayout">
+			<div class="one">
+				<form id="content" method="get" action="#null" autocomplete="on">	
+					<h1>Login</h1>
+					<fieldset>
+						<ol>
+							<li>
+								<label for="Username" id="id_1" class="label">
+									<input type ="text" id="username" class="inputs" Title="username" placeholder="Username" name="userName" required>
+								</label>
+							</li>
+							<li>
+								<label for="password" id="id_2" class="label">
+									<input type="password" id="password" class="inputs" Title="Enter a Password" placeholder="Password" name="password" required>
+								</label>	
+							</li>
+						</ol>
+					</fieldset>
+					<button type="login" class="button" onClick="checkform(this.form)">Login</button>
+					<button type="submit" class="button" onClick="clear(this.form)">Clear</button>
+					<p><a href="https://my.iit.edu/cp/myqa/answer/start" onmouseover="window.status=''; return true;">Forget Password?</a></p>
+				</form>
+			</div>
+			<div class="two">
+				<img src="images/SupportInformation.png" alt="Support Information">
+			</div>
+			<div class="three">
+				<img src="images/Policies_Guidelines.png" alt="Policies Guidelines">
+			</div>
+		</div>
+		<footer></footer>
+  </body>
+</html>
