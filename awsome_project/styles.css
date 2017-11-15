@@ -1,49 +1,32 @@
-.header img
+#iitBanner img
 {
 	display: block;
 	width: 414px;
 }
 
-* {
-    box-sizing: border-box;
-}
-.row::after 
+#iitImage img
 {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-[class*="col-"] 
-{
-  float: left;
-  padding: 15px;
-}
-.col-1
-{
-	padding: 10px;
-	width: 200px;
-	height: 200px
+	width: 414px;
+	height: 220px;
 }
 
 form
 {
 	margin: 0 auto;
-	width: 100%;
+	width: 95%;
 	height: 100%;
-	outline: none;
-	box-shadow: 0 0 20px black;
-	color: #666;
-}
+	outline: solid;
+	outline-width: 1px;
+	}
 
-form h1
+
+h2
 {
 	display: block;
 	padding: 5px;
 	text-align: left;
 	font-weight: bold;
 	color: black;
-	background: #A9A9A9;
 }
 
 form fieldset
@@ -67,4 +50,94 @@ input[type="email"]:focus
 input[type="password"]:focus 
 {
 	border-color: black;
+}
+
+@media (min-width: 800px) 
+{
+	#iitBanner img
+	{
+		width: 800px;
+		height: 101px;
+	}
+	
+	#iitBannerBG
+	{
+		background-image: url("images/bg.jpg");
+		background-size: 100% 107px;
+	}
+	
+	#iitBanner
+	{
+		background-color: #ffffff;
+	}
+
+	#iitImage
+	{
+		width: 850px;
+		height: 220px;
+	}
+	
+	#loginPic
+	{
+		width: 850px;
+	}
+	
+	.table 
+	{
+    margin: 0 auto;
+		max-width: 1200px;
+		width: 78%;
+		align: center;
+	}
+	
+	.tr 
+	{ 
+    display: table-row;	
+	}
+	
+	.td 
+	{ 
+    display: table-cell;
+	}
+	
+	#leftColumn
+	{
+		width: 230px;
+		vertical-align: top;
+		padding-left: 10px;
+		background-color: #ededed;
+	}
+	
+	#lColumnTable
+	{
+		background-color: #F8F8FF;
+		width: 220px;
+	}
+	
+	h1
+	{
+		background-color: #ccc;
+    border-top: 1px solid #999;
+    border-right: 1px solid #999;
+    border-left: 1px solid #999;
+    font-weight: bold;
+		color: black;
+    padding: 4px;
+	}
+	
+	#mainContainer
+	{
+		width: 890px;
+		valign: top;
+	}
+	
+	#mContainer
+	{
+		width: 85%;
+	}
+}
+
+@media (min-width: 800px) 
+{
+	
 }
