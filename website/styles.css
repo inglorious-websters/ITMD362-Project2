@@ -1,3 +1,4 @@
+/*index.html mobile and general styles */
 #iitBanner img
 {
 	display: block;
@@ -52,6 +53,7 @@ input[type="password"]:focus
 	border-color: black;
 }
 
+/*index.html desktop styles*/
 @media (min-width: 800px) 
 {
 	#iitBanner img
@@ -82,9 +84,14 @@ input[type="password"]:focus
 		width: 850px;
 	}
 	
+	#content
+	{
+		margin: auto;
+	}
+	
 	.table 
 	{
-    margin: 0 auto;
+   
 		max-width: 1200px;
 		width: 78%;
 		align: center;
@@ -137,7 +144,91 @@ input[type="password"]:focus
 	}
 }
 
+/*academics.html mobile and general styles */
+
+
+/*academics.html Styles*/
+
 @media (min-width: 800px) 
 {
+	#userLoggedin
+	{
+		width: 250px;
+	}
 	
+	#userLoggedin a, p
+	{
+		
+		font-size: 12px;
+		padding: 5px;
+	}
+	
+	#userInfo
+	{
+		border-left: 2px solid #bbb;
+	}
+	
+	#tabContent .td
+	{
+		vertical-align:top;
+	}
+	
+	#reg
+	{
+		padding-top: 8px;
+	}
+	
+	#regrsitration
+	{
+		border: solid;
+		border-width: 1px;
+		width: 480px;
+	}
+	
+	#regrsitration h1
+	{
+		background-color: #ccc;
+    border-top: 1px solid #999;
+    border-right: 1px solid #999;
+    border-left: 1px solid #999;
+    font-weight: bold;
+		color: black;
+    padding: 4px;
+	}
+	
+	ul 
+	{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+	}
+
+	li 
+	{
+    float: left;
+		border-right: 1px solid #bbb;
+	}
+
+	li a 
+	{
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+	}
+
+	li a:hover:not(.active) 
+	{
+    background-color: #ddd;
+	}
+	
+	li a.active 
+	{
+    color: white;
+    background-color: #4CAF50;
+	}
 }
