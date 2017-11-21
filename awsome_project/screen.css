@@ -224,6 +224,7 @@ textarea {
 /* new css starts after this point*/
 
 
+
 /* Source is https://www.w3schools.com/howto/howto_js_tabs.asp */
 /* Style the tab */
 div.tab {
@@ -275,6 +276,7 @@ div.tab button.active {
     from {opacity: 0;}
     to {opacity: 1;}
 }
+
 
 
 
