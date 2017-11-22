@@ -149,7 +149,10 @@ input[type="password"]:focus
 
 /*academics.html mobile and general styles */
 	body{
-	background-color: #CC0000;
+	/*background-color: #CC0000; red*/
+	/*background-color: #777777; gray*/
+	/*background-color: #000000; black*/
+	background-color: #ffffff; white
 	}
 	
 	#userLoggedin
@@ -172,11 +175,12 @@ input[type="password"]:focus
 	{
 		vertical-align:top;
 	}
-	img
+	.td img
 	{
 		margin:auto;
-		width:95%;
+		width:90%;
 		height:50%;
+		padding: 5%;
 	}
 	#reg
 	{
@@ -267,7 +271,7 @@ input[type="password"]:focus
 	{
 		border: solid;
 		border-width: 1px;
-		width: 480px;
+		width: 280px;
 	}
 	
 	#regrsitration h1
