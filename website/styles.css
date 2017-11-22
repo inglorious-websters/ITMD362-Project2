@@ -87,6 +87,7 @@ input[type="password"]:focus
 	#content
 	{
 		margin: auto;
+		background-color: #f2f2f2;
 	}
 	
 	.table 
@@ -95,16 +96,19 @@ input[type="password"]:focus
 		max-width: 1200px;
 		width: 78%;
 		align: center;
+		background-color: #d9d9d9;
 	}
 	
 	.tr 
 	{ 
     display: table-row;	
+	background-color: #d9d9d9;
 	}
 	
 	.td 
 	{ 
     display: table-cell;
+	
 	}
 	
 	#leftColumn
