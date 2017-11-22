@@ -2,7 +2,7 @@
 #iitBanner img
 {
 	display: block;
-	width: 100%;
+	/*width: 100%;*/
 }
 
 #iitImage img
@@ -57,7 +57,7 @@ input[type="password"]:focus
 /*index.html desktop styles*/
 @media (min-width: 800px) 
 {
-	/*#iitBanner img
+	#iitBanner img
 	{
 		width: 800px;
 		height: 101px;
@@ -68,8 +68,6 @@ input[type="password"]:focus
 		background-image: url("images/bg.jpg");
 		background-size: 100% 107px;
 	}
-	*/
-	/* isnt it easier to just make banner width 100% it always fits to screen.*/
 	
 	#iitBanner
 	{
