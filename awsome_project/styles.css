@@ -148,6 +148,30 @@ input[type="password"]:focus
 }
 
 /*academics.html mobile and general styles */
+	body{
+	background-color: #CC0000;
+	}
+	
+	#userLoggedin
+	{
+		width: 250px;
+	}
+	
+	#userLoggedin a, p
+	{
+		
+		font-size: 12px;
+		padding: 5px;
+	}
+	
+	#userInfo
+	{
+		border-left: 2px solid #bbb;
+	}
+	#tabContent .td
+	{
+		vertical-align:top;
+	}
 	img
 	{
 		margin:auto;
@@ -164,6 +188,7 @@ input[type="password"]:focus
 		border: solid;
 		border-width: 1px;
 		width: 93%;
+		background-color: #ffffff;
 	}
 	#regrsitration h1
 	{
@@ -175,10 +200,42 @@ input[type="password"]:focus
 		color: black;
     padding: 4px;
 	}
+	ul 
+	{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+	}
+
+	li a 
+	{
+    display: block;
+    color: #666;
+    text-align: lefth;
+    padding: 14px 16px;
+    text-decoration: none;
+	}
+
+	li a:hover:not(.active) 
+	{
+    background-color: #ddd;
+	}
+	
+	li a.active 
+	{
+    color: white;
+    background-color: #4CAF50;
+	}
 /*academics.html Styles*/
 
 @media (min-width: 800px) 
 {
+	body{
+	background-color: #ffffff;
+	}
 	#userLoggedin
 	{
 		width: 250px;
