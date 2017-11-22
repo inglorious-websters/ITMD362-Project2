@@ -2,7 +2,7 @@
 #iitBanner img
 {
 	display: block;
-	width: 414px;
+	width: 100%;
 }
 
 #iitImage img
@@ -53,10 +53,11 @@ input[type="password"]:focus
 	border-color: black;
 }
 
+
 /*index.html desktop styles*/
 @media (min-width: 800px) 
 {
-	#iitBanner img
+	/*#iitBanner img
 	{
 		width: 800px;
 		height: 101px;
@@ -67,6 +68,8 @@ input[type="password"]:focus
 		background-image: url("images/bg.jpg");
 		background-size: 100% 107px;
 	}
+	*/
+	/* isnt it easier to just make banner width 100% it always fits to screen.*/
 	
 	#iitBanner
 	{
@@ -145,12 +148,94 @@ input[type="password"]:focus
 }
 
 /*academics.html mobile and general styles */
+	body{
+	background-color: #CC0000;
+	}
+	
+	#userLoggedin
+	{
+		width: 250px;
+	}
+	
+	#userLoggedin a, p
+	{
+		
+		font-size: 12px;
+		padding: 5px;
+	}
+	
+	#userInfo
+	{
+		border-left: 2px solid #bbb;
+	}
+	#tabContent .td
+	{
+		vertical-align:top;
+	}
+	img
+	{
+		margin:auto;
+		width:95%;
+		height:50%;
+	}
+	#reg
+	{
+		padding-top: 10px;
+	}
+	#regrsitration
+	{
+		margin:auto;
+		border: solid;
+		border-width: 1px;
+		width: 93%;
+		background-color: #ffffff;
+	}
+	#regrsitration h1
+	{
+		background-color: #ccc;
+    border-top: 1px solid #999;
+    border-right: 1px solid #999;
+    border-left: 1px solid #999;
+    font-weight: bold;
+		color: black;
+    padding: 4px;
+	}
+	ul 
+	{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+	}
 
+	li a 
+	{
+    display: block;
+    color: #666;
+    text-align: lefth;
+    padding: 14px 16px;
+    text-decoration: none;
+	}
 
+	li a:hover:not(.active) 
+	{
+    background-color: #ddd;
+	}
+	
+	li a.active 
+	{
+    color: white;
+    background-color: #4CAF50;
+	}
 /*academics.html Styles*/
 
 @media (min-width: 800px) 
 {
+	body{
+	background-color: #ffffff;
+	}
 	#userLoggedin
 	{
 		width: 250px;
