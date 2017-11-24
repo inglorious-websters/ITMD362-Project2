@@ -1,4 +1,1 @@
 # ITMD362-Project2
-
-So for this project we mostly focused on adding a feature to a more visible spot for user to get to was the gole. So we did not stray to far from original design just trying to make page look a little nicer. The page still doesent look as nice as it could be. Some things are just tricier to deal with then they let on. Its a work in progress still. 
-Team critique would be Nick was realy knowledgeble with making certain things work like the css for desktop. Peter made the javascript code that was complimented by our peers for working nice. Melissa gave ideas for making page look nicer and we coordinated when to meet to work on project.  I guess each team meber helped with what they could do best to contribute. Me i just tried to add little things i could while trying not to mess up anyone elses code.
