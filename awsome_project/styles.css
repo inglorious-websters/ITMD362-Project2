@@ -95,7 +95,6 @@ input[type="password"]:focus
    
 		max-width: 1200px;
 		width: 78%;
-		align: center;
 	}
 	
 	.tr 
@@ -136,7 +135,6 @@ input[type="password"]:focus
 	#mainContainer
 	{
 		width: 890px;
-		valign: top;
 	}
 	
 	#mContainer
@@ -146,11 +144,12 @@ input[type="password"]:focus
 }
 
 /*academics.html mobile and general styles */
-	body{
+	body
+	{
 	/*background-color: #CC0000; red*/
 	/*background-color: #777777; gray*/
 	/*background-color: #000000; black*/
-	background-color: #ffffff; white
+	background-color: #ffffff;
 	}
 	
 	#userLoggedin
@@ -217,7 +216,7 @@ input[type="password"]:focus
 	{
     display: block;
     color: #ffffff;
-    text-align: lefth;
+    text-align: left;
     padding: 14px 16px;
     text-decoration: none;
 	}
