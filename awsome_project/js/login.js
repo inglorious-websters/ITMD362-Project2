@@ -5,22 +5,22 @@
 var attempt = 3; 
 
 // Below function Executes on click of login button.
-function validate()
+function login()
 {
-	var username = document.getElementById("username").value;
-	var password = document.getElementById("password").value;
+	var password = document.forms['loginForm']['password'].value;
 	
-	if ( username == "Peter" && password == "123")
+	if (password == "123")
 	{
 		alert ("Login successfully");
-		var valid = true;
+		return true;
 	}
 	else
 	{
-		attempt --;// Decrementing by one.
+		document.forms['loginForm'].reset();
+    attempt --;// Decrementing by one.
 		alert("You have left "+ attempt +" attempt;");
-		// Disabling fields after 3 attempts.
-		form.rest();
+		
+    // Disabling fields after 3 attempts.
 		if( attempt == 0)
 		{
 			document.getElementById("username").disabled = true;
@@ -28,16 +28,6 @@ function validate()
 			document.getElementById("login").disabled = true;
 			alert("Account Locked, contact OTS for assitance");
 		}
+    return false;
 	}
-	
- if(valid) 
- {
-    window.location = 'academics.html'; // your desired location
- }
- return false;
-}
-
-function clear(form)
-{
-	form.reset();
 }

@@ -1,0 +1,108 @@
+/*Mobile Fist*/
+ @media only screen and (min-width: 320px) 
+ {
+
+ }
+ 
+body
+{
+	display: block;
+  background-image: url('../img/iitbackground.jpg');
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+#formContent
+{
+  background-color: white;
+  background: rgb(204, 204, 204);
+  background: rgba(204, 204, 204, 0.8);
+  border-radius: 25px;
+  display: block;
+  position: relative;
+  top: 30%;
+  height: 45%;
+  width: 85%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+form
+{
+  display: block;
+  margin-top: 0;
+}
+
+fieldset
+{ 
+  display: block;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding: 0.35em 0.75em 0.625em 0.75em;
+  width: 95%;
+}
+
+legend
+{
+  padding: 10px;
+  text-align: center;
+  font-size: 2em;
+}
+
+p
+{
+  width: 95%;
+  padding-bottom: 20px;
+}
+
+input
+{
+  
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px; 
+}
+
+input[type=text] 
+{
+  background-color: white;
+  background-image: url('../img/person.png');
+  background-size: 35px;
+  background-position: 5px 5px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+}
+
+input[type=password] 
+{
+  background-color: white;
+  background-image: url('../img/lock.png');
+  background-size: 25px;
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+}
+
+input[type=submit], input[type=reset] 
+{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 3px; 
+  text-decoration: none;
+  margin-right: 10px;
+  cursor: pointer;
+  width: 75px;
+}
+
+@media only screen and (min-width: 800px) 
+{
+  #formContent
+  {
+    height: 35%;
+    width: 40%;
+  }
+}

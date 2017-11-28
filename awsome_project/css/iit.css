@@ -1,0 +1,148 @@
+#Academics
+{
+  display:none;
+}
+
+
+span
+{
+  margin: 0px;
+  display: inline-block;
+}
+
+span a
+{
+  margin: 0px;
+  display: block;
+}
+
+#menu
+{
+  margin: 0px;
+  display: inline-block;
+  font-size:30px;
+  cursor:pointer;
+}
+
+#userInfo
+{
+  padding-left: 10px;
+  border-left: 2px solid #bbb;
+}
+
+#sideNav 
+{
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+#sideNav p 
+{
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+#sideNav p:hover
+{
+  color: #f1f1f1;
+  cursor:pointer;
+}
+
+/* Position and style the close button (top right corner) */
+#sideNav .closebtn 
+{
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main 
+{
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+#content
+{
+  margin-left: 100px;
+  margin-top: 50px;
+}
+
+#Academics
+{
+  
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+#profile
+{
+  position: relative;
+  margin-top: -10px;
+  margin-right: 150px;
+  width: 25%;
+  float: left;
+}
+
+#regrsitration
+{
+  float: left;
+  position: relative;
+  border: solid;
+  border-width: 1px;
+	width: 25%;
+  margin-right: 75px;
+}
+
+#banner
+{
+  float: left;
+  position: relative;
+  margin-top: -10px;
+  width: 25%;
+}
+  
+
+#regrsitration p
+{
+  padding: 5px;
+}
+	
+#regrsitration h1
+{
+  background-color: #ccc;
+  border-top: 1px solid #999;
+  border-right: 1px solid #999;
+  border-left: 1px solid #999;
+  font-weight: bold;
+  color: black;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-height: 450px) 
+{
+  #sideNav 
+  {
+    padding-top: 15px;
+  }
+  
+  #sideNav p 
+  {
+    font-size: 18px;
+  }
+}
