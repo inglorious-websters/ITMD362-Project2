@@ -1,0 +1,238 @@
+/*index.html mobile and general styles */
+#iitBanner img
+{
+	display: block;
+	width: 414px;
+}
+
+#iitImage img
+{
+	width: 414px;
+	height: 220px;
+}
+
+form
+{
+	margin: 0 auto;
+	width: 95%;
+	height: 100%;
+	outline: solid;
+	outline-width: 1px;
+	}
+
+
+h2
+{
+	display: block;
+	padding: 5px;
+	text-align: left;
+	font-weight: bold;
+	color: black;
+}
+
+form fieldset
+{
+	display: block;
+	padding: 20px 10px;
+	border: none;
+	background: rgba(255,255,255,.9);
+}
+
+input[type="text"]:focus 
+{
+	border-color: black;
+}
+
+input[type="email"]:focus 
+{
+	border-color: black;
+}
+
+input[type="password"]:focus 
+{
+	border-color: black;
+}
+
+/*index.html desktop styles*/
+@media (min-width: 800px) 
+{
+	#iitBanner img
+	{
+		width: 800px;
+		height: 101px;
+	}
+	
+	#iitBannerBG
+	{
+		background-image: url("images/bg.jpg");
+		background-size: 100% 107px;
+	}
+	
+	#iitBanner
+	{
+		background-color: #ffffff;
+	}
+
+	#iitImage
+	{
+		width: 850px;
+		height: 220px;
+	}
+	
+	#loginPic
+	{
+		width: 850px;
+	}
+	
+	#content
+	{
+		margin: auto;
+		background-color: #f2f2f2;
+	}
+	
+	.table 
+	{
+   
+		max-width: 1200px;
+		width: 78%;
+		align: center;
+		background-color: #d9d9d9;
+	}
+	
+	.tr 
+	{ 
+    display: table-row;	
+	background-color: #d9d9d9;
+	}
+	
+	.td 
+	{ 
+    display: table-cell;
+	
+	}
+	
+	#leftColumn
+	{
+		width: 230px;
+		vertical-align: top;
+		padding-left: 10px;
+		background-color: #ededed;
+	}
+	
+	#lColumnTable
+	{
+		background-color: #F8F8FF;
+		width: 220px;
+	}
+	
+	h1
+	{
+		background-color: #ccc;
+    border-top: 1px solid #999;
+    border-right: 1px solid #999;
+    border-left: 1px solid #999;
+    font-weight: bold;
+		color: black;
+    padding: 4px;
+	}
+	
+	#mainContainer
+	{
+		width: 890px;
+		valign: top;
+	}
+	
+	#mContainer
+	{
+		width: 85%;
+	}
+}
+
+/*academics.html mobile and general styles */
+
+
+/*academics.html Styles*/
+
+@media (min-width: 800px) 
+{
+	#userLoggedin
+	{
+		width: 250px;
+	}
+	
+	#userLoggedin a, p
+	{
+		
+		font-size: 12px;
+		padding: 5px;
+	}
+	
+	#userInfo
+	{
+		border-left: 2px solid #bbb;
+	}
+	
+	#tabContent .td
+	{
+		vertical-align:top;
+	}
+	
+	#reg
+	{
+		padding-top: 8px;
+	}
+	
+	#regrsitration
+	{
+		border: solid;
+		border-width: 1px;
+		width: 480px;
+	}
+	
+	#regrsitration h1
+	{
+		background-color: #ccc;
+    border-top: 1px solid #999;
+    border-right: 1px solid #999;
+    border-left: 1px solid #999;
+    font-weight: bold;
+		color: black;
+    padding: 4px;
+	}
+	
+	ul 
+	{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+	}
+
+	li 
+	{
+    float: left;
+		border-right: 1px solid #bbb;
+	}
+
+	li a 
+	{
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+	}
+
+	li a:hover:not(.active) 
+	{
+    background-color: #ddd;
+	}
+	
+	li a.active 
+	{
+    color: white;
+    background-color: #4CAF50;
+	}
+}
