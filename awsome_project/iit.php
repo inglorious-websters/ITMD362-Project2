@@ -35,10 +35,10 @@
         <a>My Account</a>
         <a>Content Layer</a>
        </span>
-      <span id ='userInfo'> 
+      <div id ='userInfo'> 
         <p>Welcome: <?php echo $_POST['user_name']; ?></p>
         <p>You are Currently Signed in</p>
-      </span>
+      </div>
     </div>
     <div id='content'>
       <div id ='Welcome' class='pages'>

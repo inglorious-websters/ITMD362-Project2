@@ -26,6 +26,7 @@ span a
 
 #userInfo
 {
+  display: inline-block;
   padding-left: 10px;
   border-left: 2px solid #bbb;
 }
