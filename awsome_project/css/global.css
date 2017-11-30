@@ -4,11 +4,36 @@ html, body
   width: 100%;
 }
 
+#iitBanner
+{
+  display: inline-block;
+  width: 100%;
+}
+
 #iitBannerBG
 {
-  width: auto;
   overflow: hidden;
 }
+
+#iitBannerBG img
+{
+	max-width: 1500px;
+	height: auto;
+}
+
+ @media only screen and (min-width: 481px) 
+ {
+		#iitBannerBG img
+		{
+			max-width: 2000px;
+			height: auto;
+		}
+ }
+ 
+  @media only screen and (min-width: 641px) 
+ {
+		
+ }
 
 
 
