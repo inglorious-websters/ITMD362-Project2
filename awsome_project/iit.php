@@ -48,7 +48,7 @@
           <div id="regrsitration">
             <h1>Registration Tools</h1>
 						<p><a href="img/RegistrationStatus.png">Registration Status</a></p>
-						<p><a href="img/LooUpClasses.png">Look Up Classes</a></p>
+						<p><a href="img/LooUpClasses.PNG">Look Up Classes</a></p>
 						<p><a href="img/AddDropClasses.png">Add or Drop Classes</a></p>
 						<p><a href="img/ChangeClassOptions.png">Change Class Options</a></p>
 						<p><a href="img/WeekAtGlance.png">Schedule - Week at a Glance</a></p>
