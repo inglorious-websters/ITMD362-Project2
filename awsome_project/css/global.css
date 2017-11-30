@@ -26,13 +26,15 @@ html, body
 		#iitBannerBG img
 		{
 			max-width: 2000px;
-			height: auto;
 		}
  }
  
-  @media only screen and (min-width: 641px) 
+  @media only screen and (min-width: 800px) 
  {
-		
+	 #iitBannerBG img
+		{
+			max-width: 3000px;
+		}
  }
 
 

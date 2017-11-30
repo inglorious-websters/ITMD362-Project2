@@ -33,6 +33,11 @@ span a
   cursor: pointer;
 }
 
+#account
+{
+	margin-left: 50px;
+}
+
 #userInfo
 {
   display: inline-block;
@@ -88,6 +93,7 @@ span a
 
 #content
 {
+	margin-left: 50px;
 	width: 100%;
   margin-top: 50px;
 }
@@ -105,7 +111,7 @@ span a
 {
 	text-align: center;
 	position: fixed;
-	width: 300px;
+	width: 100%;
 }
 
 #regrsitration
@@ -144,6 +150,72 @@ span a
   margin-bottom: 10px;
 }
 
+@media only screen and (min-width: 350px) 
+{ 
+	#content
+	{
+		margin-left: 15px;
+		overflow: hidden;
+	}
+	
+	#Welcome
+	{
+		margin-left: -35px;
+		font-size: 15px;
+		text-align: center;
+		position: fixed;
+		width: 100%;
+	}
+	
+	#content img
+	{
+		width: 325px;
+		
+	}
+	
+	#profile
+	{
+		float: left;
+	}
+	
+	#regrsitration
+	{
+		float: left;
+		width: 325px;
+	}
+	
+	#banner:
+	{
+		float: left;
+		width: 350px;
+	}
+	
+	#iitBanner span
+	{
+		width: 35px;
+	}
+	
+	#menu
+	{
+		top: 5px;
+		margin-left: -10px;
+		font-size: 30px;
+	}
+	
+	#account
+	{
+		width: 100%;
+		position: relative;
+		margin-left: 30px;
+		font-size: 12px;
+	}
+	
+	#userInfo
+	{
+		font-size: 12px;
+	}
+}
+
  @media only screen and (min-width: 481px) 
  {
 		#iitBannerBG img
@@ -154,11 +226,7 @@ span a
 		
 		#sideNav p 
 		{
-			padding: 8px 8px 8px 32px;
-			text-decoration: none;
 			font-size: 25px;
-			color: #818181;
-			display: block;
 			transition: 0.3s;
 		}
 		
@@ -175,6 +243,28 @@ span a
  
   @media only screen and (min-width: 641px) 
  {
+	 #iitBanner span
+		{
+			width: 50px;
+		}
+		
+		#menu
+		{
+			top: 5px;
+			margin-left: -10px;
+			font-size: 50px;
+		}
+		
+		#account
+		{
+			margin-left: 40px;
+			font-size: 16px;
+		}
+	
+		#userInfo
+		{
+			font-size: 16px;
+		}
 		#sideNav p 
 		{
 			padding: 8px 8px 8px 32px;
@@ -185,16 +275,3 @@ span a
 			transition: 0.3s;
 		}
  }
-
-@media screen and (max-height: 450px) 
-{
-  #sideNav 
-  {
-    padding-top: 15px;
-  }
-  
-  #sideNav p 
-  {
-    font-size: 18px;
-  }
-}

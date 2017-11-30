@@ -69,7 +69,7 @@ input[type=text]
   background-size: 35px;
   background-position: 5px 5px; 
   background-repeat: no-repeat;
-  padding: 12px 20px 12px 40px;
+  padding: 10px 20px 10px 40px;
 }
 
 input[type=password] 
@@ -103,75 +103,61 @@ p
 }
 
  @media only screen and (min-width: 350px) 
- {
-	 
+ { 
 	 #formContent
-{
-  
- 
-  height: 35%;
-  width: 60%;
-
+	{
+		height: 240px;
+		width: 225px;
 }
 	 
 	 legend
-{
-
-  font-size: 22px;
-}
-	 input
-{
-  
-  font-size: 16px;
-	width: 190px;
-	height: 40px;
-}
-input[type=submit], input[type=reset] 
-{
+	{
+		font-size: 22px;
+	}
+	
+	input
+	{
+		font-size: 16px;
+		width: 200px;
+		height: 45px;
+	}
+	
+	input[type=submit], input[type=reset] 
+	{
   
   width: 70px;
-
-}
-p
-{
-	margin-top: -3px;
-	font-size: 12px;
-	text-align: center;
-}
+	}
+	
+	p
+	{
+		margin-top: -3px;
+		font-size: 12px;
+		text-align: center;
+	}
  }
 
  @media only screen and (min-width: 481px) 
- {
-		#formContent
 {
-  background-color: white;
-  background: rgb(204, 204, 204);
-  background: rgba(204, 204, 204, 0.8);
-  border-radius: 25px;
-  display: block;
-  position: relative;
-  top: 30%;
-  height: 45%;
-  width: 85%;
-  margin: 0 auto;
-}
+	#formContent
+	{
+		top: 30%;
+		height: 25%;
+		width: 35%;
+	}
 
-input
-{
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-	width: 195px;
+	input
+	{
+		font-size: 16px;
+		width: 195px;
+	}
 }
- }
  
 
 @media only screen and (min-width: 961px) 
 {
   #formContent
   {
-    height: 35%;
-    width: 40%;
+    height: 250px;
+    width: 250px;
   }
 }

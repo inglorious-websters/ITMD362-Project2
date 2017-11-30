@@ -25,16 +25,16 @@
     </div>
     <div id='main'>
       <div id='iitBanner'>
+         <span id='menu' onclick='openNav()'>&#9776;</span>
         <div id='iitBannerBG'>
           <img src='img/header_blk_red.gif' alt='IIT banner'>
         </div>
       </div>
-      <div>
-      <span id='menu' onclick='openNav()'>&#9776;</span>
-       <span>
-        <a>My Account</a>
-        <a>Content Layer</a>
-       </span>
+      <div id="account">
+        <span>
+          <a href="#">My Account</a>
+          <a href="#">Content Layer</a>
+        </span>
       <div id ='userInfo'> 
         <p>Welcome: <?php echo $_POST['user_name']; ?></p>
         <p>You are Currently Signed in</p>
